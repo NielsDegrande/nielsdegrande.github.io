@@ -1,14 +1,17 @@
-@media screen {
-  html, body {
-    min-width: 320px;
-  }
+html {
+  display: table;
+}
+
+html, body {
+  height: 100%;
+  margin: auto;
 }
 
 body {
-  background-color: #f2f2f2;
-  background-size: cover;
-  background-image: url("../assets/green.jpg");
+  background-color: white;
+  display: table-cell;
   font-family: 'Fira Code', monospace;
+  vertical-align: middle;
 }
 
 h1 {
@@ -22,6 +25,11 @@ h2 {
   padding: 10px 0 20px 0;
 }
 
+.box {
+  width: 80vw;
+  max-width: 480px;
+}
+
 .container {
   height: 128px;
   padding: 20px 0 10px 0;
@@ -31,9 +39,10 @@ h2 {
 .horizontal-line {
   background-color: #42B983;
   height: 2px;
+  max-width: 128px;
   position: absolute;
   top: 50%;
-  width: 64px;
+  width: 16vw;
   z-index: 1;
 }
 
@@ -53,7 +62,7 @@ h2 {
 .icon {
   color: black;
   font-size: 32px;
-  padding: 30px;
+  padding: 16px;
   text-decoration: none;
 }
 
@@ -62,21 +71,13 @@ h2 {
 }
 
 .icons {
+  padding-top: 4vh;
   text-align: center;
 }
 
 .stress {
   color: #42B983;
   font-weight: normal;
-}
-
-.white-box {
-  background-color: #ffffff;
-  padding: 30px;
-  width: 320px;
-  position: absolute;
-  left: 50%;
-  margin-left: -190px;
 }
 
 #green-left {
