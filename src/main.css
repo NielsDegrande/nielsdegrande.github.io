@@ -2,7 +2,8 @@ html {
   display: table;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: auto;
 }
@@ -10,8 +11,7 @@ html, body {
 body {
   background-color: white;
   display: table-cell;
-  font-family: 'Fira Code', monospace;
-  vertical-align: middle;
+  font-family: "Fira Code", monospace;
 }
 
 h1 {
@@ -37,7 +37,7 @@ h2 {
 }
 
 .horizontal-line {
-  background-color: #42B983;
+  background-color: #42b983;
   height: 2px;
   max-width: 128px;
   position: absolute;
@@ -56,7 +56,7 @@ h2 {
 }
 
 .image-circle:hover {
-  color: #42B983
+  color: #42b983;
 }
 
 .icon {
@@ -67,7 +67,7 @@ h2 {
 }
 
 .icon:hover {
-  color: #42B983
+  color: #42b983;
 }
 
 .icons {
@@ -76,8 +76,25 @@ h2 {
 }
 
 .stress {
-  color: #42B983;
+  color: #42b983;
   font-weight: normal;
+}
+
+.blog-link {
+  color: #42b983;
+  text-decoration: none;
+  padding-left: 16px;
+}
+
+.blog-date {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0;
+  padding-left: 16px;
+}
+
+.blog-entry {
+  margin: 1rem 0;
 }
 
 #green-left {

@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/nielsdegrande
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://niels.degran.de
+  * I am nielsdegrande (https://keybase.io/nielsdegrande) on keybase.
+  * I have a public key ASBgO2-0gif-mapLtQ6mEQ0O-QVmNu217UMih3durMj5iAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120603b6fb48227fe99aa4bb50ea6110d0ef9056636edb5ed432287776eacc8f9880a",
+      "host": "keybase.io",
+      "kid": "0120603b6fb48227fe99aa4bb50ea6110d0ef9056636edb5ed432287776eacc8f9880a",
+      "uid": "15641a4ca661d5a901fc8deba4038119",
+      "username": "nielsdegrande"
+    },
+    "merkle_root": {
+      "ctime": 1586718646,
+      "hash": "3607901f5716b01c97fc5b25ca0a67db89775eb8633f23f5e0f45f4507e4bebddbe1747dcbee830cf585cffb040e28ee03aa9541ea883fc174a0ca0ea8fefd9f",
+      "hash_meta": "303eddfdcc4c4c4a019db03e597ce282ac83ebdc29f4e6051f8db28e5da45202",
+      "seqno": 15895721
+    },
+    "service": {
+      "entropy": "U7pebSZBNBVCuL3JiCiozXzw",
+      "hostname": "niels.degran.de",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.3.0"
+  },
+  "ctime": 1586718657,
+  "expire_in": 504576000,
+  "prev": "1255925027125b933c2b4a4f7289eb2c1cbadcb9f38ef2923340bd0ca2d3d61b",
+  "seqno": 13,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgYDtvtIIn/pmqS7UOphENDvkFZjbtte1DIod3bqzI+YgKp3BheWxvYWTESpcCDcQgElWSUCcSW5M8K0pPconrLBy63LnzjvKSM0C9DKLT1hvEIMY/SIZ7AMkmH0YW+16DeCAHkyPBRTTqoy9FzELpig6SAgHCo3NpZ8RAXIuxFAZJmxyxe5CiFQk+Jyh5CZkxAavAb3Jl3GW++7vDoVynvs8Uem6IIdbkOFSCtwXc72ArLfCIOIsoeez4CqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIP3gir5aOwrOCNowN/+4s/psd3kW3nNP50GxDfUsUcbyo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nielsdegrande
+
+==================================================================
