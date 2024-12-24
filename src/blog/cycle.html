@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cycle</title>
+    <meta name="description" content="Recycle workflows" />
+
+    <link href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../../src/main.css" />
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog.html" class="link-green">Blog</a> /
+        <span class="link-gray">Cycle</span>
+      </div>
+      <h1>Cycle</h1>
+      <div class="blog-text">
+        <h2>Recycle your workflows</h2>
+        <img class="blog-img" src="../../assets/blog/cycle/cycle.png" alt="Cycle" />
+        <p>
+          Many tasks are repetitive yet tricky to automate, often requiring human input or the ability to handle fuzzy logic and complex interfaces.
+          Traditionally, we rely on scripts or RPA tools like UiPath, both require time and specialized skills.
+        </p>
+        <p>
+          <strong>Generative process automation</strong> aims to handle these more nuanced tasks by combining multimodal foundation models with direct computer access.
+          However, prompting these systems requires precise instructions. One solution is to record your workflow once—or a few times—and feed that recording into the generative model as a guide.
+        </p>
+        <p>
+          <a href="https://github.com/NielsDegrande/cycle">Cycle</a> is a simple implementation of this idea.
+          It uses Gemini 2 Flash to transcribe the recorded workflow, then hands the transcription off to Anthropic's Computer Use to automate the process.
+        </p>
+        <img class="blog-img" src="../../assets/blog/cycle/transcript.png" alt="Transcript" />
+        <p>
+          Performance is currently limited, as the system is relatively slow and computer use can be costly.
+          As foundation model providers improve their Computer Use capabilities, performance will improve.
+        </p>
+        <img class="blog-img" src="../../assets/blog/cycle/replay.png" alt="Replay" />
+        <p>
+          Ultimately, the goal is to make complex task automation accessible to everyone, no matter how intricate the job.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
