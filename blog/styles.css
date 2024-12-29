@@ -1,0 +1,25 @@
+.breadcrumbs {
+  padding-top: 32px;
+  padding-bottom: 16px;
+}
+
+.blog-date {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.blog-entry {
+  margin: 1rem 0;
+}
+
+.blog-text {
+  padding-left: 0px;
+}
+
+.blog-img {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: block;
+}
