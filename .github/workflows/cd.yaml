@@ -22,7 +22,8 @@ jobs:
           server-dir: /domains/degran.de/public_html/niels/
           dry-run: false
           exclude: |
+            .editorconfig
+            .gitignore
             .git/**
             .github/**
             README.md
-            .editorconfig
