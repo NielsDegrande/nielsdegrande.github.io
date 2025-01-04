@@ -9,15 +9,43 @@
     <title>Niels Degrande</title>
     <meta name="description" content="Personal web page of Niels Degrande">
 
-    <link href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+        crossorigin="anonymous"
+      />
+    </noscript>
     <link rel="stylesheet" href="main.css" />
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   </head>
   <body style="vertical-align: middle;">
     <div class="box">
       <div class="container">
-        <img class="image-circle" src="assets/niels.jpg" onmouseover="this.src='assets/hi.png';" onmouseout="this.src='assets/niels.jpg'">
+        <img class="image-circle" src="assets/niels.jpg" alt="Photo of Niels Degrande" onmouseover="this.src='assets/hi.png';" onmouseout="this.src='assets/niels.jpg'">
         <div class="horizontal-line" id="green-left"></div>
         <div class="horizontal-line" id="green-right"></div>
       </div>
@@ -26,14 +54,14 @@
       <p>I am a software engineer working in AI.<br>I am passionate about distributed ledger technology, the future of transportation and autonomous flight.</p>
       <div class="icons">
         <div class="icon-row">
-          <a class="fa fa-pen-nib icon" href="blog/index.html"></a>
-          <a class="fab fa-github icon" href="https://github.com/NielsDegrande" target="_blank"></a>
-          <a class="fab fa-keybase icon" href="https://keybase.io/nielsdegrande" target="_blank"></a>
+          <a class="fa fa-pen-nib icon" href="blog/index.html" aria-label="Go to Blog"></a>
+          <a class="fab fa-github icon" href="https://github.com/NielsDegrande" target="_blank" aria-label="GitHub profile"></a>
+          <a class="fab fa-keybase icon" href="https://keybase.io/nielsdegrande" target="_blank" aria-label="Keybase profile"></a>
         </div>
         <div class="icon-row">
-          <a class="fa fa-envelope icon" href="mailto:niels@degran.de" target="_blank"></a>
-          <a class="fab fa-linkedin icon" href="https://www.linkedin.com/in/nielsdegrande/" target="_blank"></a>
-          <a class="fab fa-hacker-news icon" href="https://news.ycombinator.com/user?id=nielsdegrande" target="_blank"></a>
+          <a class="fa fa-envelope icon" href="mailto:niels@degran.de" target="_blank" aria-label="Send Email"></a>
+          <a class="fab fa-linkedin icon" href="https://www.linkedin.com/in/nielsdegrande/" target="_blank" aria-label="LinkedIn profile"></a>
+          <a class="fab fa-hacker-news icon" href="https://news.ycombinator.com/user?id=nielsdegrande" target="_blank" aria-label="Hacker News profile"></a>
         </div>
       </div>
     </div>
