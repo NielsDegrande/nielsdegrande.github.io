@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>When to multi-agent?</title>
+    <meta name="description" content="When to multi-agent?" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Multi-agent</span>
+      </div>
+      <h1>When to multi-agent?</h1>
+      <div class="blog-text">
+        <h2>Spectrum of LLM interaction patterns</h2>
+        Multi-agency is the next step in the evolution of large language model interaction patterns.
+        <p>
+          <ul>
+            <li>Completions/Chats: A single LLM interaction.</li>
+            <li>Chains: Multiple LLM interactions in sequence. Steps can involve further LLM calls.</li>
+            <li>Constrained Agents:</li>
+            <ul>
+              <li>Not fully autonomous, but capable of partial agency.</li>
+              <li>Often acts as a router or dispatcher, triggering one chain from its menu.</li>
+              <li>Complex systems may need multiple levels of dispatch. This can be seen as primitive multi-agency.</li>
+            </ul>
+            <li>Autonomous Agent:</li>
+            <ul>
+              <li>A single agent with autonomy.</li>
+              <li>The LLM decides when to call which tools, in what order, and when to return.</li>
+              <li>Use autonomy only when needed. Defining logical tool sequences often improves quality and guardrail adherence.</li>
+            </ul>
+            <li>Multi-agents: Several (autonomous) agents.</li>
+          </ul>
+        </p>
+        <h2>Multi-what?</h2>
+        <p>
+          A development team can organize their code with an agent abstraction.
+        </p>
+        <p>
+          Does that make it a true multi-agent system?
+          These agents might run in a single Python process. Inter-agent communication are method calls.
+          Effectively, this is object oriented programming, leveraging a framework that introduces an Agent class (LangGraph, CrewAI, AutoGen, etc.).
+          The latter is a wrapper around an LLM call, with instructions, a set of tools and some state to update across invocations.
+        </p>
+        <p>
+          Though it can help to break down the problem solving like a human team, I have seen little gain in sophistication.
+          The hello-world for multi-agent frameworks is still writing a blog with an editor, researcher, writer and reviser.
+        </p>
+        <p>
+          Instead, if you want to deploy agents in production, I recommend constraining the workflow as much as possible.
+          A more straightforward abstraction can be graphs; sub-graphs also function as a form of lightweight multi-agency.
+        </p>
+        <h2>When to multi-agent?</h2>
+        <p>
+          True value emerges when agents operate across different companies or teams.
+          They run as distinct applications, communicate via an agent protocol, and discover each other's services. Natural language is the common interface.
+          An example might be an internal agent delegating research tasks to an external agent e.g., a university, then sharing a summary with stakeholders through a Salesforce provided Slack agent.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
