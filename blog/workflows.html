@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Levels of Workflow Automation</title>
+    <meta name="description" content="Levels of Workflow Automation" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Workflows</span>
+      </div>
+      <h1>Levels of Workflow Automation</h1>
+      <div class="blog-text">
+        <h2>Introduction</h2>
+        <p>
+          Successful workflow automation requires evaluating the level of sophistication your processes demand.
+          Below are four levels of GenAI-driven automation, each offering unique benefits and use cases.
+        </p>
+        <h2>Level 1: Integrated with a Constrained Agent</h2>
+        <p>
+          This approach integrates GenAI capabilities directly into existing software, such as Now Assist by ServiceNow.
+          The user interacts through chat, and an LLM has the agency to call existing APIs.
+          By constraining the agent's actions to a few well-defined workflows, you improve reliability.
+          This interface also enables automation beyond the software's existing capabilities, for instance creating multiple tickets with a single prompt.
+          Initially, software vendors may charge extra for these features, but as they become more common, they will likely be included in the base price.
+          This level will not be replaced by generative process automation (GPA) because direct API access is faster, cheaper, and more precise.
+        </p>
+        <h2>Level 2: Low-Code E2E Automation</h2>
+        <p>
+          A thin GenAI-enabled layer uses (low-code) tools with LLM features to span entire business processes.
+          This consolidates multiple point solutions into more streamlined, end-to-end workflows.
+          Processes that are fairly standard or should be standardized can greatly benefit from this approach.
+          Examples include marketing, sales, and customer service processes.
+          I expect the range of processes that can be automated at this level to expand quickly, as foundational model providers add capabilities like multi-modality and interactive voice.
+          However, as Levels 1 and 3 continue to improve, fewer processes may remain at this level.
+        </p>
+        <h2>Level 3: Generative Automation</h2>
+        <p>
+          Here, the generative automation tool has direct access to a user's computer to record and automate tasks.
+          This is ideal for highly customized or fluid scenarios that do not fit standard solutions.
+          Consider any repetitive ad-hoc task you might have, such as renaming files, extracting data, or populating spreadsheets.
+          Because GenAI can define a workflow (via natural language, video analysis, etc.) and also execute it (through computer vision, etc.), GPA may have a major impact for end users.
+          Improvements in accessing other agents and computer interactions will make this level of automation very powerful.
+        </p>
+        <h2>Level 4: Physical and Virtual Integration</h2>
+        <p>
+          This final level bridges the virtual and physical worlds with robotics or other devices.
+          It enables end-to-end automation for processes requiring both software orchestration and real-world actions.
+          For instance, a robot can deliver a package while updating its status in the relevant software.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+<!--  -->
