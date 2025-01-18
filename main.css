@@ -108,3 +108,20 @@ a {
 #green-right {
   right: 0%;
 }
+
+.button-rounded {
+  background-color: #42b983;
+  color: white;
+  padding: 0.75em 1.5em;
+  border-radius: 9999px;
+}
+
+.button-rounded:hover {
+  background-color: black;
+  color: white;
+}
+
+.button-container {
+  text-align: center;
+  padding-top: 4vh;
+}
