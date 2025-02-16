@@ -14,6 +14,20 @@
   font-display: swap;
 }
 
+:root {
+  --background-color: white;
+  --text-color: black;
+  --text-color-rgb: 0, 0, 0;
+  --accent-color: #42b983;
+}
+
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --text-color-rgb: 255, 255, 255;
+  --accent-color: #42b983;
+}
+
 html {
   display: table;
 }
@@ -25,7 +39,8 @@ body {
 }
 
 body {
-  background-color: white;
+  background-color: var(--background-color);
+  color: var(--text-color);
   display: table-cell;
   font-family: "Fira Code", monospace;
 }
@@ -81,7 +96,7 @@ a {
 }
 
 .icon {
-  color: black;
+  color: var(--text-color);
   font-size: 32px;
   padding: 16px;
   text-decoration: none;
@@ -117,11 +132,41 @@ a {
 }
 
 .button-rounded:hover {
-  background-color: black;
-  color: white;
+  background-color: var(--text-color);
+  color: var(--background-color);
 }
 
 .button-container {
   text-align: center;
   padding-top: 4vh;
+}
+
+/* Dark mode toggle button. */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--text-color);
+  background: var(--background-color);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+  background: var(--text-color);
+  color: var(--background-color);
+}
+
+.theme-toggle:active {
+  transform: scale(0.97);
 }
