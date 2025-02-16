@@ -1,1 +1,2 @@
+- Do not contract words.
 - Punctuate comments.

@@ -43,13 +43,17 @@
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
   </head>
   <body>
-    <button class="theme-toggle" aria-label="Toggle dark mode">🌞</button>
     <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode">🌞</button>
       <div class="breadcrumbs">
         <a href="../index.html" class="link-green">Home</a> /
         <span class="link-gray">Blog</span>
       </div>
       <h1>Blog</h1>
+      <div class="blog-entry">
+        <a class="blog-link" href="agent-dark-mode.html"><i class="fas fa-moon"></i> Agent dark mode</a>
+        <p class="blog-date">Published on Feb 16, 2025</p>
+      </div>
       <div class="blog-entry">
         <a class="blog-link" href="multi-agent.html"><i class="fas fa-robot"></i> When to multi-agent</a>
         <p class="blog-date">Published on Jan 17, 2025</p>
@@ -75,19 +79,19 @@
       // Theme toggle functionality.
       const themeToggle = document.querySelector('.theme-toggle');
       const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-      
+
       // Get theme from localStorage or system preference.
-      const currentTheme = localStorage.getItem('theme') || 
+      const currentTheme = localStorage.getItem('theme') ||
         (prefersDarkScheme.matches ? 'dark' : 'light');
-      
+
       // Apply theme on load.
       document.documentElement.setAttribute('data-theme', currentTheme);
       themeToggle.textContent = currentTheme === 'dark' ? '🌞' : '🌙';
-      
+
       // Toggle theme.
       themeToggle.addEventListener('click', () => {
-        const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' 
-          ? 'light' 
+        const newTheme = document.documentElement.getAttribute('data-theme') === 'dark'
+          ? 'light'
           : 'dark';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);

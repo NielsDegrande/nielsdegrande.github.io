@@ -4,10 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>First blog post</title>
-    <meta name="description" content="First blog post" />
-
+    <title>Agent dark mode</title>
+    <meta name="description" content="Exploring GitHub Copilot's experimental Agent Mode in VSCode Insiders" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link
       rel="preload"
@@ -46,19 +44,48 @@
     <div class="box">
       <button class="theme-toggle" aria-label="Toggle dark mode">🌞</button>
       <div class="breadcrumbs">
-        <a href="../../index.html" class="link-green">Home</a> /
-        <a href="../blog/index.html" class="link-green">Blog</a> /
-        <span class="link-gray">First</span>
+        <a href="../index.html" class="link-green">Home</a> /
+        <a href="./index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Dark</span>
       </div>
-      <h1>First blog post</h1>
+      <h1>Agent dark mode</h1>
       <div class="blog-text">
         <p>
-          I have wanted to start blogging for a long time. Every time I built a small POC, gave a talk, or ran a
-          training, I thought about writing it all down — yet it never happened.
+            I have been exploring the new Agent mode for GitHub Copilot,
+            currently available in Visual Studio Code Insiders.
         </p>
+
+        <h2>UI Framework Migration</h2>
         <p>
-          This is my New Year's resolution to finally publish my thoughts here, hoping
-          to do more of it in 2025. Let's see!
+            I tried migrating from Material UI to shadcn/ui in a template codebase.
+            The agent made steady progress.
+            One standout feature was its ability to install the necessary npm packages, or any shell command for that matter.
+            Before doing so, it confirms with the developer.
+            However, the task eventually got too complex, and I had to terminate the session.
+            I could probably have broken it down into smaller steps to make it more manageable.
+        </p>
+
+        <h2>Adding Dark Mode</h2>
+        <p>
+            Another attempt involved adding dark mode to this site.
+            The agent handled it smoothly on the first try.
+            While the initial setup worked, it needed a few style tweaks.
+            The solution also did not cover every page at first.
+            Nothing a few additional prompts could not fix.
+        </p>
+        <img class="blog-img" src="../../assets/blog/agent-dark-mode/copilot-agent.png" alt="Copilot Agent example" />
+
+        <h2>Observations on Agent Mode</h2>
+        <p>
+            It feels similar to Copilot Edit,
+            but it stands out by automatically identifying the files that need changing,
+            which saves time.
+            The ability to run shell commands is a game-changer,
+            and probably a first step towards more tool use.
+            A slightly faster experience would be welcome,
+            especially as the (slower) reasoning models are not available in Agent mode yet.
+            To handle the first task unsupervised, Agent mode will at least require more powerful (reasoning) models than 4o or 3.5 Sonnet offered today.
+            As soon as one of these becomes available, I will revisit the shadcn/ui challenge.
         </p>
       </div>
     </div>
