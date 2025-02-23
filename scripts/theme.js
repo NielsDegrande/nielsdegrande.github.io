@@ -8,7 +8,7 @@ const currentTheme = localStorage.getItem('theme') ||
 
 // Apply theme on load.
 document.documentElement.setAttribute('data-theme', currentTheme);
-themeToggle.textContent = currentTheme === 'dark' ? '🌞' : '🌙';
+themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
 
 // Toggle theme.
 themeToggle.addEventListener('click', () => {
@@ -17,5 +17,5 @@ themeToggle.addEventListener('click', () => {
     : 'dark';
   document.documentElement.setAttribute('data-theme', newTheme);
   localStorage.setItem('theme', newTheme);
-  themeToggle.textContent = newTheme === 'dark' ? '🌞' : '🌙';
+  themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
 });

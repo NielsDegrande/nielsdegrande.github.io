@@ -19,14 +19,12 @@
 :root {
   --background-color: white;
   --text-color: black;
-  --text-color-rgb: 0, 0, 0;
   --accent-color: #42b983;
 }
 
 [data-theme="dark"] {
   --background-color: #1a1a1a;
-  --text-color: #ffffff;
-  --text-color-rgb: 255, 255, 255;
+  --text-color: white;
   --accent-color: #42b983;
 }
 
@@ -148,13 +146,12 @@ a {
 .theme-toggle {
   align-items: center;
   justify-content: center;
-  background: var(--text-color);
-  border-radius: 50%;
+  background: var(--accent-color);
+  border-radius: 100%;
   border: none;
   cursor: pointer;
   display: flex;
   font-size: 1rem;
-  line-height: normal;
   height: 2rem;
   width: 2rem;
   z-index: 1000;
@@ -165,5 +162,5 @@ a {
 }
 
 .theme-toggle:hover {
-  background: var(--background-color);
+  background: var(--text-color);
 }
