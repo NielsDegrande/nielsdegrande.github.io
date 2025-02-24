@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Language push down</title>
+    <meta name="description" content="Language push down" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Language</span>
+      </div>
+      <h1>Language push down</h1>
+      <div class="blog-text">
+        <p>
+          Generative engineering—applying generative AI to software engineering—has drastically changed the way I develop.
+          Now, we incorporate agentic patterns, further pushing the boundaries of the developer experience.
+          How will this recent change impact programming language design and adoption?
+          As a developer, I foresee changes in the languages we use to write or review code.
+          Additionally, I see implications for how we do CI/CD and what we might end up deploying.
+        </p>
+        <h2>Bear case on frameworks</h2>
+        <p>
+          This website does not use any framework. No Gatsby, Hugo or Jekyll.
+          Instead I handcraft every file, like the olden days.
+          Why? Originally because it pleased my inner geek.
+          Making drastic changes to such a website used to be painful though,
+          and often involved searching and replacing throughout the codebase.
+          That, to a large extent, has disappeared.
+          Now I prompt a change, the agent picks up the relevant files, and applies the change wherever needed.
+          I read through the proposed changes in similar fashion as a PR review, make edits or re-prompt where needed.
+          As I argued in an earlier post, it is far from perfect, but these new development flows will only get better.
+        </p>
+        <p>
+          Is it wasteful to use LLMs as a drop-in replacement for static site generators?
+          Probably. However it keeps things simple. No node, no nothing.
+          It puts me on the sweet spot between complexity (low), flexibility (high), maintainability (now high too).
+        </p>
+        <h2>Transpilation at development time</h2>
+        <p>
+          LLM-driven development allows me to code in "lower level" languages or paradigms than I would otherwise do.
+          How far can we stretch this?
+          I might code an algorithm in Python, ask the agent to write test cases,
+          then transpile the algorithm and its test cases to C or Rust.
+          The latter is what I end up compiling and deploying.
+        </p>
+        <p>
+          Could it ever go as far as writing e.g., CUDA or machine code? What if we have dedicated foundation models?
+          Unlikely, as quickly the relative expressiveness of the languages involved might get in the way.
+          However, the complexity threshold reduction might fast forward developer tooling,
+          making these languages and frameworks more accessible nevertheless.
+        </p>
+        <p>
+          This evolution towards lower level languages and frameworks might make DevOps, for example, CI/CD, simpler too.
+          For example, deploying this website does not require any tooling beyond FTP sync.
+        </p>
+        <h2>Closer to the metal</h2>
+        <p>
+          While the job of a developer might shift towards prompting,
+          hence writing more English and less code,
+          I am pleased that we might be doing so closer to the metal.
+        </p>
+        <h2>Postscript</h2>
+        <p>
+          I wrote this blog while on a plane with no internet access.
+          Usually I start from a couple of bullets and have Copilot write a first draft.
+          Then there are several iterations of editing and prompting.
+          This time I wrote the whole blog in one go, no Copilot
+          nor tapping into any of the smaller models I run locally.
+          Once on the ground, I asked Copilot to review grammar and style, I got no suggestions.
+        </p>
+        <cite>
+          The style is concise and clear overall. It is professional and direct. -Copilot
+        </cite>
+        <p>
+          Thank you! It is nice to know that I can still write without assistance 😬.
+          I wonder how much longer that will be the case.
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>
