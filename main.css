@@ -149,10 +149,8 @@ a {
   border: none;
   cursor: pointer;
   display: flex;
-  height: 2rem;
-  width: 2rem;
   z-index: 1000;
   position: absolute;
-  right: -0.4rem;
+  right: -0.45rem;
   top: 26px;
 }
