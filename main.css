@@ -145,22 +145,14 @@ a {
 /* Dark mode toggle button. */
 .theme-toggle {
   align-items: center;
-  justify-content: center;
-  background: var(--accent-color);
-  border-radius: 100%;
+  background: var(--background-color);
   border: none;
   cursor: pointer;
   display: flex;
-  font-size: 1rem;
   height: 2rem;
   width: 2rem;
   z-index: 1000;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: absolute;
-  right: 0;
+  right: -0.4rem;
   top: 26px;
-}
-
-.theme-toggle:hover {
-  background: var(--text-color);
 }
