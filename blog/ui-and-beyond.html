@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Generative UI & beyond</title>
+    <meta name="description" content="Generative UI & beyond" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Generative UI & beyond</span>
+      </div>
+      <h1>GenUI & beyond</h1>
+      <div class="blog-text">
+        <h2>Introduction</h2>
+        <p>
+          A few days ago, I gave a talk on the impact of agents on digital manufacturing and the supply chain.
+          While preparing, I wanted to include a section on user interface and interaction implications.
+          I realized there was little information available, hence this post.
+        </p>
+        <h2>Generative UI</h2>
+        <p>
+          In my view, generative UI is the concept of generating a user interface dynamically based on the context.
+          For example, one production planner might prefer a high-level overview,
+          allowing them to dive deeper by clicking around.
+          Each deep dive focuses on a single concern.
+          Another planner might prefer a single view that displays all details at once.
+          A third planner might switch between both options depending on the task at hand.
+        </p>
+        <p>
+          While one could implement all of the above and allow the user to choose from a menu,
+          it is more likely that a workshop would take place, and eventual consistency would be reached.
+          Given how slowly these systems evolve, it is entirely possible that the people who made the decision are no longer around.
+        </p>
+        <p>
+          Now imagine a world where the system either:
+          <ul>
+            <li>Observes you and/or uses information about you to present an optimal user interface and experience.</li>
+            <li>Asks questions and presents options. You provide feedback and eventually confirm your preferred interface.</li>
+          </ul>
+          The above applies to a handful of planners but would equally hold true for millions of banking app users.
+          I, for one, would be grateful if I could customize the user interface and experience of my banking app.
+          </p>
+          <p>
+          Technically, I have not seen many implementations of this pattern yet, but I can imagine at least two:
+          <ul>
+            <li>
+              Configure - The user interface has a lot of flexibility and configurability, and the LLM acts as a configurator.
+              This is especially relevant when there is significant optionality in the application's user interface,
+              but the average end-user might not be able to consider all options and configure it properly.
+            </li>
+            <li>
+              Generate - An LLM generates a user interface dynamically and saves it along with other user data.
+              One would probably not want to generate an entire user interface but rather bits and pieces to be injected into predefined places.
+            </li>
+          </ul>
+        </p>
+        <h2>Apps to Agents</h2>
+        <p>
+          The above thinking is rather traditional. Why does one need an interface at all?
+          What if there is an agent to augment and automate all your tasks that you previously would have done through a user interface?
+          I can ask it to fetch some data, visualize it as a table and bar chart, and then apply a few changes.
+          Over time, the agent memorizes which KPIs I request at the start of a session and provides them to me proactively.
+          <br><br>
+          Generated user interfaces adapt to the user and their context, while an agent adapts to every single question and interaction.
+          The latter would not require any user interface at all, rather a headless CRM, ERP, or any other MIS.
+        </p>
+        <h2>Beyond UI</h2>
+        <p>
+          The above discussion focused heavily on user interface and experience, but there might be more to it.
+          While interacting with any interface, an LLM could observe your actions and provide suggestions.
+          For example, you might be inputting data, and the LLM could spot a mistake.
+          It could suggest a correction or even correct it for you.
+          Leveraging an LLM in this way might seem far-fetched today,
+          but it is a promising direction for future developments in user interaction and data management.
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>
