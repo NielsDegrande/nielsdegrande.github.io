@@ -97,6 +97,30 @@
           They run as distinct applications, communicate via an agent protocol, and discover each other's services. Natural language is the common interface.
           An example might be an internal agent delegating research tasks to an external agent e.g., a university, then sharing a summary with stakeholders through a Salesforce provided Slack agent.
         </p>
+        <h2>Addendum (2025-04-23): Why to multi-agent?</h2>
+        <p>
+          I have been critical of multi-agent approaches, as I often see them used in scenarios where they're detrimental rather than beneficial.
+          Here I elaborate on three reasons why to consider multiple agents:
+          <ol>
+            <li>
+              Crossing <strong>organizational boundaries</strong> as mentioned above.
+              The agent is a flexible abstraction to a system or some functionality.
+              For example, using Google's A2A or Agent Protocol.
+            </li>
+            <li>
+              In scenarios with extreme <strong>open-endedness and non-determinism</strong>, as demonstrated in projects like Manus and Google's Co-Scientist.<br>
+              When tools and data begin to fragment extensively, orchestrating multiple specialized agents begins to make sense.
+              Similarly, when a system benefits from having multiple concurrent agents, having multiple instances of one agent allows to cast a wider net (map-reduce style) given a fixed wall time budget.<br>
+              These systems can effectively mimic organizational dynamics, with various experts collaborating where the sum becomes more than its individual parts.
+              However, avoid specialization in an already narrow and deterministic domain. Here, losing control as well as the bigger picture might outweigh the benefits mentioned above.
+            </li>
+            <li>
+              When agents need to run with a different <strong>lifecycle</strong>. For example a dedicated memory agent that reads conversations, and updates memory.
+              Here specialization is clearly warranted.
+              One can debate, though, whether this is truly multi-agent or simply multiple "single-agents" operating independently, as they don't necessarily interact directly.
+            </li>
+          </ol>
+        </p>
       </div>
     </div>
     <script src="../scripts/theme.js"></script>
