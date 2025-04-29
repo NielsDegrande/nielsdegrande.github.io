@@ -33,3 +33,8 @@
 .link-green {
   color: var(--accent-color);
 }
+
+.spaced {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

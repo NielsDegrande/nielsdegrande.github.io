@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Coding Agent Dance-off</title>
+    <meta name="description" content="A comparison of different coding agents for a real-world task" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Dance-off</span>
+      </div>
+      <h1>Coding Agent Dance-off</h1>
+      <div class="blog-text">
+        <p>
+          Every morning I wake up with the nagging suspicion that I am using the wrong coding agent.
+          Until convincing developer-experience benchmarks exist, I rely on a bench of repeatable challenges to gauge each agent's real-world competence and form my own prior.
+        </p>
+        <h2>Today's Challenge</h2>
+        <p>
+          A migration task moving a React UI from Material UI to Tailwind CSS and shadcn/ui.
+          I use <a href="https://github.com/NielsDegrande/ui" target="_blank" rel="noopener noreferrer">this UI</a> as a template to build the frontend for AI applications.
+          <img class="blog-img spaced" src="../assets/blog/coding-agent-dance-off/baseline.png" alt="Baseline screenshot" />
+          If I were to do this, I would:
+          <ol>
+            <li>Spin up the dev server and capture screenshots of the existing UI. Alternatively, checkout the project twice and run side-by-side.</li>
+            <li>Update configuration files and install or remove dependencies.</li>
+            <li>Replace MUI components with shadcn/ui primitives, then update all pages.</li>
+            <li>Run the application, fix compile/runtime errors, and ensure visual parity or improvement with the original screenshots.</li>
+          </ol>
+        </p>
+        <h2>Results</h2>
+        <p>
+          <strong>OpenHands (o3 + Sonnet 3.7)</strong>
+          Began with a clear plan and a few clarifying questions.
+          Completed the migration, but the resulting interface was very different.
+          It decided to test the application and impressively handled navigation and login flows.
+          I believe it is a little chatty, as it quickly hit my OpenAI budget limits, after which I continued with Sonnet.
+        </p>
+        <img class="blog-img spaced" src="../assets/blog/coding-agent-dance-off/openhands_summary.png" alt="OpenHands summary message" />
+        <img class="blog-img spaced" src="../assets/blog/coding-agent-dance-off/openhands_result.png" alt="OpenHands result screenshot" />
+        <p>
+          <strong>Aider (Sonnet 3.7)</strong>
+          Required only a handful of interventions.
+          It asked for frequent approvals when adding new files, which I found annoying.
+          Ultimately it produced clean Tailwind code and a UI that mostly matched the original design.
+        </p>
+        <img class="blog-img spaced" src="../assets/blog/coding-agent-dance-off/aider_result.png" alt="Aider result screenshot" />
+        <p>
+          <strong>Codex (o4-mini)</strong>
+          Inspected the codebase and proposed a plan before requesting user verification.
+          Entered a cycle of compiling and fixing errors that was hard to follow, leaving me with limited visibility into its internal steps.
+          Eventually I intervened myself, and got it to work by installing a few dependencies.
+          While it worked, it was visually the worst result.
+        </p>
+        <img class="blog-img spaced" src="../assets/blog/coding-agent-dance-off/codex_result.png" alt="Codex result screenshot" />
+        <p>
+          <strong>Cursor (Auto)</strong>
+          Worked quickly, but needed explicit prompts to validate its changes.
+          Partway through validating, it began re-introducing MUI dependencies, at which point I halted the run.
+          I considered intervening more, but that would not be a fair comparison.
+          No result; hence, no screenshots.
+        </p>
+        <p>
+          <strong>GitHub Copilot Agent Mode (GPT-4o & Sonnet 3.7)</strong>
+          Copilot in agent mode currently does not support o3 or o4-mini, unfortunately.
+          Using 4o, the agent struggled with understanding shadcn/ui.
+          It attempted to fetch external resources with MCP, though without using valid URLs, and failed completely.
+          <br>
+          A Sonnet-backed run added the shadcn/ui components but left pages unmodified, then finished while overstating its progress.
+          No result; hence, no screenshots.
+        </p>
+        <p>
+          <strong>Others</strong>
+          I have not signed up for Zed's agentic beta yet.
+          While I see a lot of traction, I have not found the willingness yet to invest in adopting a new IDE.
+          <br>
+          Claude Code's authentication flow has been letting me down so far, so it is excluded for the time being.
+        </p>
+        <h2>Ranking</h2>
+        <ol>
+          <li>Aider</li>
+          <li>OpenHands</li>
+          <li>Codex</li>
+          <li>Cursor</li>
+          <li>GitHub Copilot (Agent Mode)</li>
+        </ol>
+        <h2>Reflections</h2>
+        <p>
+          I attempted this challenge a few months ago, and now I achieve significantly better results.
+          Extrapolating, I can imagine that in a few months, we will have a solid solution that works first-time right.
+        </p>
+        <ul>
+          <li>The importance of the foundation model (FM). For now, I believe the FM is more important than the IDE or framework.</li>
+          <li>Coding agents not tied to an IDE seem to perform better for this type of challenge. I gather these are optimized for longer autonomy vs. frequent user interaction.</li>
+          <li>A coding agent that validates its own results autonomously is perceived (by me) to perform a lot better. I wonder why these coding agents wait until the end though. I have learned the hard way to test early and often.</li>
+          <li>Finding a good UI/UX to get the security vs. autonomy trade-off right. Too many prompts are annoying, while a coding agent being destructive would be very annoying.</li>
+        </ul>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>
