@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Agent management</title>
+    <meta name="description" content="How will agents be managed?" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Agent management</span>
+      </div>
+      <h1>Agent management</h1>
+      <div class="blog-text">
+        <h2>"Organizational" structure of agents</h2>
+        <p>
+          As AI agents become pervasive in enterprise environments, a critical question emerges: how will these agents be structured and managed?
+          Contrary to what I see often today, the organization of enterprise agents will (IMO) not follow rigid hierarchical structures or isolated "pyramids" of agents operating independently.
+        </p>
+        <p>
+          Instead, and similar to the internet, agent-to-agent (A2A) communication will enable broader and more flexible collaboration patterns.
+        </p>
+        <h2>Networks, not hierarchies</h2>
+        <p>
+          While the internet has minimal inherent hierarchy, agent networks may incorporate elements of privilege and authority.
+          Similar to organizational charts in companies, there will be defined relationships determining which agents (or humans) can delegate to other agents (or humans).
+        </p>
+        <p>
+          These governance structures can be enforced within a company's boundaries but become more complex when collaboration spans across organizational boundaries—mirroring today's challenges when interacting with suppliers or clients.
+        </p>
+        <p>
+          The most likely outcome is a highly unstructured network of agents and humans. Zooming in within a company, you might see supervisory relationships between agents and humans.
+          However, zooming out to the broader ecosystem reveals a predominantly peer-to-peer style network.
+        </p>
+
+        <h2>Agent management platforms</h2>
+        <p>
+          A growing field of technology vendors and startups is focusing on enterprise agent management and alignment.
+          These platforms are becoming essential components of AI infrastructure, offering capabilities that facilitate agent discovery, collaboration, and governance.
+        </p>
+
+        <h3>Trusted agent discovery</h3>
+        <p>
+          One critical function of these platforms is enabling agents to discover each other in a trusted manner:
+        </p>
+        <ul>
+          <li>
+            "Public" discovery services will likely emerge soon, though these will inherently carry certain risks.
+            Similar to the internet, we will employ PKI (Public Key Infrastructure) for high-trust agents (like commercial banking agents) and "webs of trust" for end-user agents to mitigate these risks.
+          </li>
+          <li>
+            Within enterprise boundaries, organizations can maintain private agent gardens, where certificates and other security controls ensure interactions only occur with trusted agents.
+          </li>
+          <li>
+            Using public discovery services is like using the public Docker Hub, while private agent directories function more like self-hosted container registries or private artifact stores.
+          </li>
+        </ul>
+
+        <h3>Secure agent collaboration</h3>
+        <p>
+          These platforms also facilitate secure and efficient agent collaboration:
+        </p>
+        <p>
+          The functionality will resemble API management platforms (like MuleSoft and others), which have been addressing similar challenges in service-to-service communication.
+          It is notable that existing API management vendors are likely to expand their offerings to include agent management capabilities.
+        </p>
+
+        <h3>Ensuring alignment</h3>
+        <p>
+          Perhaps the most significant challenge for agent management platforms will be ensuring alignment across humans and agents within an organization:
+        </p>
+        <ul>
+          <li>
+            Just as teams use sprint planning to align human efforts, we will need mechanisms to keep teams of agents and humans working coherently toward shared objectives.
+          </li>
+          <li>
+            These platforms will need to provide ways to assign work to agents, visualize current and planned activities, and maintain records for audit purposes.
+          </li>
+        </ul>
+
+        <h2>Looking ahead</h2>
+        <p>
+          As enterprise agent deployment accelerates, the management and governance of these systems will become increasingly critical.
+          The platforms and practices that emerge will need to balance enabling powerful collaboration with maintaining necessary controls and alignment.
+          Hence, I expect Agent Management to become a key component of the AI infrastructure stack.
+        </p>
+        <p>
+          The agent ecosystem will not be rigidly structured or completely chaotic—rather, it will resemble our existing organizational structures,
+          with defined boundaries within enterprises and more flexible, trust-based relationships across organizational boundaries.
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>
