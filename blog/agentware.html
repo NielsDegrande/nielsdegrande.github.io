@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>A(gent)ware</title>
+    <meta name="description" content="A minimal MCP server for agent registration and discovery" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">A(gent)ware</span>
+      </div>
+      <h1>A(gent)ware</h1>
+      <img class="blog-img spaced" src="../../assets/blog/agentware/mcp-inspector.png" alt="MCP inspector screenshot of aware" />
+      <div class="blog-text">
+        <p>
+          I wrote a minimal backend and MCP (Model Context Protocol) server that enables agent registration and discovery.
+          The goal is to provide a simple, self-hosted solution for companies or teams that want to maintain a private registry of their AI agents.
+        </p>
+        <p>
+          With <strong>aware</strong>, agents can register themselves and discover other agents on the server.
+          This makes it easy to build collaborative agent ecosystems, where agents can find and leverage each other's capabilities dynamically.
+        </p>
+        <p>
+          The implementation is intentionally minimal, serving as both a practical tool and a learning exercise for building MCP servers.
+          To use it, deploy the backend and add aware-mcp as an MCP server to your agents.
+          They will then be able to self-register and discover peers, unlocking new possibilities for coordination and automation.
+        </p>
+        <p>
+          You can find the project and setup instructions on <a href="https://github.com/NielsDegrande/aware" target="_blank">GitHub</a>.
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>
