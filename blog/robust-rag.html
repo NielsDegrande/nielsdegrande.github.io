@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Robust RAG</title>
+    <meta name="description" content="How to build robust Retrieval Augmented Generation (RAG) systems, focusing on information extraction, retrieval precision/recall, and continuous evaluation." />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Robust RAG</span>
+      </div>
+      <h1>Robust RAG</h1>
+      <div class="blog-text">
+        <p>
+          Retrieval Augmented Generation (RAG) has become a cornerstone for building sophisticated AI applications that can leverage vast amounts of private or specialized data.
+          However, making these RAG systems "robust" is a multi-faceted challenge.
+          I break down "robustness" into three key areas:
+        </p>
+
+        <h2>Considerations before you start</h2>
+        <ul>
+          <li><strong>Build or buy?</strong> Decide whether you want a managed RAG service (for faster deployment) or an in-house pipeline (for deeper control and customization of data extraction).</li>
+          <li><strong>Federated versus central:</strong> Determine whether unstructured data pipelines should be managed centrally by a platform team or distributed across product teams.</li>
+          <li><strong>Retrieval modes:</strong> In addition to vector search, consider SQL agents for structured data, web crawlers, and API-based retrieval pipelines.</li>
+        </ul>
+        <h2>1. Information gathering and extraction</h2>
+        <p>
+          The old adage "Garbage in, garbage out" holds particularly true for RAG systems.
+          The quality of your AI's output is fundamentally limited by the quality of the data it can access and understand.
+          Information extraction is absolutely critical.
+          If you ground your system properly, poor information extraction is often the primary reason for suboptimal performance and can lead to hallucinations where the system misquotes data.
+        </p>
+        <p>
+          If you connect your RAG system to incorrect or outdated data sources, or if you fail to properly extract information from complex formats (like intricate PowerPoint presentations where scraping raw text loses semantic meaning), your system is handicapped from the start.
+          Challenges include dealing with images containing text, poorly structured documents, brand logos used in place of text, or real-time data feeds.
+        </p>
+        <p>
+          Effective techniques involve Optical Character Recognition (OCR) – for instance, using services like Azure Form Recognizer to convert PDFs to structured JSON – and leveraging vision-capable AI models (such as 4o).
+          These vision models can go beyond simple transcription to interpret diagrams or extract semantic meaning from slide layouts, significantly improving data ingestion quality.
+          For complex tables, collapse multi-index structures during preprocessing.
+        </p>
+        <p>
+          Post-extraction, the data must be chunked and indexed for efficient retrieval:
+        <ul>
+          <li><strong>Chunking strategies:</strong> Various levels of sophistication exist from simple recursive splitting to sentence window embeddings or auto merging. Consider adapting the chunking per document type.</li>
+          <li><strong>Chunk augmentation:</strong> Enrich chunks with metadata (source labels, dates, document sections, custom tags) to improve filtering and context retrieval.</li>
+        </ul>
+
+        <h2>2. Precision and recall upon retrieval</h2>
+        <p>
+          Once data resides in a vector database (or other retrieval stores, for example a graph database), the next challenge is retrieving the most relevant information to answer user queries.
+          This is where precision and recall metrics measure success:
+        </p>
+        <ul>
+          <li><strong>Low Precision:</strong> Of all the documents retrieved, only a few are relevant to the query.</li>
+          <li><strong>Low Recall:</strong> Many relevant documents that could have answered the query are missed.</li>
+        </ul>
+        <p>
+          Common techniques for improving precision and recall include:
+        </p>
+        <ul>
+          <li><strong>Query Augmentation:</strong> Reformulate the query, often using an LLM, to better match the underlying data. Generate multiple "orthogonal" queries given a single user query to cover different angles.</li>
+          <li><strong>Hybrid Search:</strong> Combining traditional keyword-based search (like BM25) with semantic (vector) search, often using techniques like Reciprocal Rank Fusion (RRF) to merge results, to get the best of both worlds.</li>
+          <li><strong>Re-ranking:</strong> Using a more specialized model (like a cross-encoder) to re-rank the initially retrieved documents and select the best ones.</li>
+          <li><strong>Information Extraction Tuning:</strong> Optimizing chunking strategies, embedding models, and indexing to improve retrieval effectiveness.</li>
+        </ul>
+        <p>
+          A more recent development is <strong>agentic RAG</strong>.
+          The core idea involves an AI agent that retrieves information, reflects on its quality and completeness, and iteratively refines its search with new queries if needed.
+          Beyond iterative refinement, agentic strategies can also involve the specialization of indices for different types of information.
+        </p>
+
+        <h2>3. Evaluations</h2>
+        <p>
+          Even with the best extraction and retrieval strategies, outputs may still falter in real-world scenarios.
+          Continuous evaluation is essential to measure performance, catch regressions, and guide ongoing improvements.
+        </p>
+        <p>
+          Evaluation is both a development process and a set of tooling, often integrated into LLMOps (Large Language Model Operations).
+          It involves establishing a framework to validate the quality of the system and its prompts.
+        </p>
+        <p>
+          The diagram below illustrates the idea of a continuous improvement cycle with evaluations at its core.
+          This requires both upfront (often just a few examples suffice) and continuous gathering of test examples.
+          Evaluation techniques can include (fuzzy) matching, LLM-graded evaluations, and human evaluation.
+        </p>
+        <div id="evaluation-cycle-svg-container" style="text-align: center; margin: 20px 0;">
+          <svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+            <style>
+              .node { fill: #f4f4f4; stroke: #555; stroke-width: 1; rx: 8; ry: 8; }
+              .label { font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; fill: #333; }
+              .arrow { fill: none; stroke: #444; stroke-width: 1.5; marker-end: url(#arrowhead); }
+            </style>
+            <defs>
+              <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0,10 3.5,0 7" fill="#444" />
+              </marker>
+            </defs>
+            <!-- Nodes -->
+            <g>
+              <rect x="170" y="20" width="260" height="60" class="node" />
+              <text x="300" y="50" class="label">Gather test dataset</text>
+            </g>
+            <g>
+              <rect x="170" y="100" width="260" height="60" class="node" />
+              <text x="300" y="130" class="label">Run flow against test data</text>
+            </g>
+            <g>
+              <rect x="170" y="180" width="260" height="60" class="node" />
+              <text x="300" y="210" class="label">Evaluate system</text>
+            </g>
+            <g>
+              <rect x="170" y="260" width="260" height="60" class="node" />
+              <text x="300" y="290" class="label">Deploy &amp; monitor usage</text>
+            </g>
+            <g>
+              <rect x="170" y="340" width="260" height="60" class="node" />
+              <text x="300" y="370" class="label">Evaluate usage &amp; complaints</text>
+            </g>
+            <g>
+              <rect x="170" y="420" width="260" height="60" class="node" />
+              <text x="300" y="450" class="label">Incorporate tests from feedback &amp; bugs</text>
+            </g>
+            <!-- Arrows -->
+            <path d="M300,80 L300,100" class="arrow" />
+            <path d="M300,160 L300,180" class="arrow" />
+            <path d="M300,240 L300,260" class="arrow" />
+            <path d="M300,320 L300,340" class="arrow" />
+            <path d="M300,400 L300,420" class="arrow" />
+            <path d="M300,480 C300,540 80,540 80,130" class="arrow" />
+            <path d="M80,130 L170,130" class="arrow" />
+          </svg>
+        </div>
+        <h2>Generation</h2>
+        <p>
+          Note that I exclude the generation step.
+          While this used to be a problem, with today's foundation models, the generation or summarization of answers is rarely the bottleneck.
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>
