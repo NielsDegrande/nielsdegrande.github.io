@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Spectrum of coding agents</title>
+    <meta name="description" content="A tour across the spectrum of AI-assisted coding agents — from vibe-coding web builders to IDE copilots." />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Spectrum of coding agents</span>
+      </div>
+      <h1>Spectrum of coding agents</h1>
+      <div class="blog-text">
+        <h2>Why a spectrum?</h2>
+        <p>
+          The modern AI-assisted development landscape spans a wide spectrum — from click-and-ship website builders to powerful IDE copilots.
+          Each tool trades flexibility for convenience in its own way.
+        </p>
+
+        <p>This end of the spectrum is <em>everyone with a browser</em> just vibe-coding. →</p>
+        <h2>1. Vibe-coding web-app builders</h2>
+        <p>
+          Think <span class="link-green">Bolt</span>, <span class="link-green">Lovable</span>, <span class="link-green">Firebase Studio</span> and similar hosted builders.
+          We have evolved from Dreamweaver to Wix to WordPress to today's vibe-coding.
+          This end of the spectrum:
+        </p>
+        <ul>
+          <li>Typically follows cookie-cutter tech stacks e.g., React SPA, Tailwind</li>
+          <li>Uses Supabase for authentication and data persistence</li>
+          <li>Adds capabilities through libraries e.g., Three.js for 3D web apps and games</li>
+          <li>Offers domain name registration within the builder</li>
+          <li>Always produces web apps, with the browser as the ceiling</li>
+        </ul>
+
+        <h2>2. Browser IDEs</h2>
+        <p>
+          Platforms like <span class="link-green">Replit</span> provide complete development environments in the cloud.
+          You can ship a Python CLI, wire up a Postgres database, or preview a web app—all without leaving your tab.
+          Here's what you get:
+        </p>
+        <ul>
+          <li>More flexibility than web builders, supporting a wider range of development activities</li>
+          <li>Broader runtime support for CLIs, servers, and scheduled tasks</li>
+          <li>The freedom can lead to hallucination: agents may over-promise capabilities</li>
+        </ul>
+
+        <h2>3. Low-code tooling (now with AI)</h2>
+        <p>
+          Low-code natives like <span class="link-green">n8n</span> or <span class="link-green">Retool</span>, and AI-natives such as <span class="link-green">LangFlow</span>, <span class="link-green">Flowise</span>, or <span class="link-green">Copilot Studio</span>, combine drag-and-drop orchestration with LLM functionality.
+          These tools provide:
+        </p>
+        <ul>
+          <li>Rich libraries of building blocks and integrations</li>
+          <li>Great for quick RAG prototypes, OneDrive syncs, and multi-step workflows</li>
+          <li>Enable building multi-component apps and workflows that remain challenging in prompt-only tools</li>
+        </ul>
+
+        <h2>4. Terminal-based coding agents</h2>
+        <p>
+          <span class="link-green">Aider</span>, <span class="link-green">OpenAI Codex</span>, <span class="link-green">Claude-code</span> and similar tools live in your shell.
+          They optimize for autonomy: how long can the agent code without supervision?
+          The main characteristics include:
+        </p>
+        <ul>
+          <li>Can bootstrap entire features or small apps in one go</li>
+          <li>Debugging can be challenging due to log-based monitoring rather than GUI interfaces</li>
+        </ul>
+
+        <h2>5. Junior developer agents</h2>
+        <p>
+          <span class="link-green">OpenHands</span>, <span class="link-green">Devin</span>, and similar tools emulate the junior software engineer experience.
+          You can observe the codebase as it's being developed and watch how the agent interacts with terminal, browser, and other tools.
+          These agents offer:
+        </p>
+        <ul>
+          <li>Interactive development with questions and discussions about implementation details</li>
+          <li>A middle ground—less hands-on than IDE agents but more interactive than terminal-based ones</li>
+          <li>Support for developing moderately complex applications</li>
+          <li>Transparency into the agent's thought process and decision-making</li>
+        </ul>
+
+        <h2>6. IDE agents</h2>
+        <p>
+          <span class="link-green">Cursor</span>, <span class="link-green">Windsurf</span>, <span class="link-green">Zed</span>, <span class="link-green">GitHub Copilot</span> and <span class="link-green">Junie</span> bring the agent into a full-blown IDE.
+          This developer-centric approach delivers:
+        </p>
+        <ul>
+          <li>Maximum flexibility and customization—from vibe-coding to minimal AI assistance</li>
+          <li>Optimal performance with large/legacy codebases and multi-repo systems</li>
+          <li>Full control over environment setup and deployments, with LLM support for tasks like <code>brew install node</code></li>
+        </ul>
+
+        <p>← This side is the most developer-centric.</p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>
