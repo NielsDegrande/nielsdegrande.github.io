@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Herding agents</title>
+    <meta name="description" content="Reflections on how developers are becoming herders of parallel AI agents." />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Herding agents</span>
+      </div>
+      <h1>Herding agents</h1>
+      <div class="blog-text">
+        <p>
+          Today I gave a presentation on the future of GenAI.
+          Nowadays, I always include one slightly controversial take: that humans might someday play second fiddle to autonomous agents.
+        </p>
+        <p>
+          It is too easy to assume that only humans will delegate to agents, and not the other way around.
+          Human-agent interaction will take forms we can barely imagine today.<br>
+          Peter Gostev recently joked about ProxyHumans on <a href="https://www.linkedin.com/posts/peter-gostev_proxyhuman-activity-7327077655382548480-qAa7" class="link-green" target="_blank" rel="noopener noreferrer">LinkedIn</a>, and I found it amusing, as I can easily imagine it becoming reality.
+        </p>
+        <p>
+          As engineers, we can already feel this shift.
+          Instead of picking up a single ticket and grinding it to completion with one coding agent at your side,
+          you can pick up three tickets, spawn three coding agents (plus a few background or sub-agents),
+          and round-robin feedback until all of them are ready for a pull request.
+          This pattern was described <a href="https://www.anthropic.com/engineering/claude-code-best-practices" class="link-green" target="_blank" rel="noopener noreferrer">here by the Anthropic team</a>.
+          Coaching several agents that run in parallel while you context-switch, nudge, and course-correct transforms you into something new:
+          <strong>A herder of agents.</strong>
+        </p>
+        <p>
+          I suspect this pattern will extend far beyond software engineering.
+          Marketeers might launch ten copywriting agents.
+          Product managers could spin up fleets of research bots.
+          Today, many people have already experienced this by opening three ChatGPT tabs and asking each a different question,
+          then doing a round of follow-up questions.
+        </p>
+        <p>
+          Getting value from this setup is simple in theory but maddening in practice:
+          you lose track of threads, forget which answer came from where, and context-switch until your biological RAM thrashes.
+          My current approach is a digital scratchpad where I can stack dump after every interaction.
+          When I return to a thread, it helps to reload the mental stack.
+        </p>
+        <p>
+          The future may still debate whether humans are subordinate to agents,
+          but before that argument is settled, we will all become expert herders.
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>

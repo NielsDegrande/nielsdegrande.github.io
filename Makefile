@@ -11,8 +11,8 @@ help:
 .PHONY: initialize_blog
 BLOG_FILENAME := $(shell echo "$(TOPIC)" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
 ESCAPED_TOPIC := $(shell echo '$(TOPIC)' | sed 's/\([^a-zA-Z0-9 ]\)/\\\1/g')
-ESCAPED_CONTENT := $(shell echo '$(CONTENT)' | sed 's/\([^a-zA-Z0-9 ]\)/\\\1/g')
 initialize_blog:
+	@echo "$(CONTENT)" > /tmp/blog_content.txt
 	aider \
     --no-git \
     --yes-always \
@@ -30,5 +30,5 @@ initialize_blog:
                 Aim for a tone that is engaging and conversational. An easy read for a skilled developer. \
                 Ensure titles are in sentence case. Do not overly escape special characters. \
                 Make the HTML easy to read for a developer by starting a new line within the same <p> tag after you punctuate. \
-                Here is the content to incorporate: '$(ESCAPED_CONTENT)'. \
-              "
+                Here is the content to incorporate: $$(cat /tmp/blog_content.txt)."
+	@rm /tmp/blog_content.txt
