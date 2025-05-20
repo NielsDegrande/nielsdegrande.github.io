@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>make initialize_blog</title>
+    <meta name="description" content="Automating my writing flow with make initialize_blog" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">make initialize_blog</span>
+      </div>
+      <h1>make initialize_blog</h1>
+      <div class="blog-text">
+        <p>
+          I succeeded in writing more, thanks to automating the process.<br>
+          Here is a Makefile that holds the basic steps.
+        </p>
+        <img class="blog-img spaced" src="../assets/blog/make-initialize-blog/makefile.png" alt="Screenshot of the Makefile used for blog automation" />
+        <p>
+          In short:
+          <ul>
+            <li>Aider updates the index.</li>
+            <li>Bash script copies the template.</li>
+            <li>Aider takes my messy notes and populates the template.</li>
+            <li>I review the diff and edit with Cursor or VSCode with GitHub Copilot.</li>
+            <li>I commit the changes.</li>
+            <li>Continuous deployment then publishes to the blog.</li>
+          </ul>
+        </p>
+        <h2>Quality</h2>
+        <p>
+          Does it harm the quality of my work? I do not think so.
+        </p>
+        <p>
+          I care about the novelty of the ideas and the output quality.
+          Hence, I provide a lot of context and I review and edit the output.
+          I can imagine that is not a given with all users of GenAI.
+          Even the writing style should be quite aligned with my own,
+          as I have written sufficient posts myself or with myself in a close loop that these are effectively few-shot examples.
+        </p>
+        <p>
+          My only worry would be that I am a poor writer (probably true) and that I keep propagating that from now on.
+        </p>
+        <p>
+          GenAI might be the salvation here too, as I continuously ask for feedback.
+          Who could ever say they have one of the most well-read entities giving them continuous feedback?
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>

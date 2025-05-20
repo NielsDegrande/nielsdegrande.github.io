@@ -27,6 +27,7 @@ initialize_blog:
     --file blog/$(BLOG_FILENAME).html \
     --message "Write a blog post about '$(ESCAPED_TOPIC)'. \
                 Look at other posts in the \`blog\` folder to get the style right. \
+                Use h2 tags for subheadings. \
                 Aim for a tone that is engaging and conversational. An easy read for a skilled developer. \
                 Ensure titles are in sentence case. Do not overly escape special characters. \
                 Make the HTML easy to read for a developer by starting a new line within the same <p> tag after you punctuate. \
