@@ -30,5 +30,5 @@ initialize_blog:
                 Aim for a tone that is engaging and conversational. An easy read for a skilled developer. \
                 Ensure titles are in sentence case. Do not overly escape special characters. \
                 Make the HTML easy to read for a developer by starting a new line within the same <p> tag after you punctuate. \
-                Here is the content to incorporate: '$(ESCAPED_CONTENT)'.
+                Here is the content to incorporate: '$(ESCAPED_CONTENT)'. \
               "

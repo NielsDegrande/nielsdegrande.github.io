@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Codex vs. Jules</title>
+    <meta
+      name="description"
+      content="A hands-on verdict on the browser-based coding agents Codex and Jules."
+    />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Codex&nbsp;vs.&nbsp;Jules</span>
+      </div>
+      <h1>Codex vs. Jules</h1>
+      <div class="blog-text">
+        <p>
+          My post on the spectrum of coding agents is not even cold yet, and already two new names are trending:
+          <a href="https://openai.com/index/introducing-codex/" class="link-green" target="_blank" rel="noopener noreferrer">OpenAI's Codex in the cloud</a> and
+          <a href="https://jules.google/" class="link-green" target="_blank" rel="noopener noreferrer">Google's Jules</a>.
+        </p>
+        <p>
+          On paper they feel familiar.
+          Picture the terminal-based coding agents but with a web UI glued on top
+          and the development environment moved to the cloud.
+        </p>
+        <p>
+          To evaluate them fairly, I presented both with the same task:
+          migrating SQLAlchemy to SQLModel.
+        </p>
+        <p>
+          My verdict: it does not work.
+          Both claimed success, yet neither achieved working static typing (<code>pyright</code>) or passing tests.
+          Jules did not even attempt to run any linting or tests.
+        </p>
+        <p>
+          Part of the problem lies in their approach to development environments.
+          Rather than using a Dockerfile as the environment definition,
+          they rely on prompt-based instructions (see <code>AGENTS.md</code>).
+          I could envision this working for simple tasks, similar to Sweep's original vision —
+          I recently discovered they have pivoted to developing coding assistants for JetBrains.
+          Their initial concept was to create a junior developer that handles issues and creates pull requests through GitHub integration.
+          Skipping the step of defining a development environment does not work for complex tasks yet.
+        </p>
+        <p>
+          One interesting observation: while Jules demonstrated better understanding of SQLModel and thus performed the conversion more effectively,
+          it chose to refactor my Python code into something Java-like.
+          This was neither requested nor Pythonic.
+          Codex, on the other hand, was hallucinating the SQLModel API,
+          but at least maintained the original coding style.
+        </p>
+        <img class="blog-img spaced" src="../../assets/blog/codex-vs-jules/jules.png" alt="Jules screenshot showing the web interface" />
+        <img class="blog-img spaced" src="../../assets/blog/codex-vs-jules/codex.png" alt="Codex screenshot showing the web interface" />
+        <p>
+          I am confident both will improve over time,
+          but I do not yet see them as a threat to existing coding agents.
+          They represent a new (browser-based) interface for coding agents,
+          rather than a new class of agents.
+          The UI/UX benefits simple issues,
+          but requires direct integration with CI to be truly valuable.
+          Once they natively integrate with GitHub or your preferred distributed VCS,
+          I would certainly consider using this coding agent interface for simple issues (initially).
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>
