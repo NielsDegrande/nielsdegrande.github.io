@@ -50,6 +50,13 @@ h1 {
   font-weight: normal;
 }
 
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 200%;
+    word-wrap: break-word;
+  }
+}
+
 h2 {
   font-size: 180%;
   font-weight: lighter;
