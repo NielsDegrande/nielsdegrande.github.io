@@ -1,4 +1,6 @@
 name: FTP Deploy
+permissions:
+  contents: read
 
 on:
   push:
