@@ -38,3 +38,36 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
+/* Flow diagram styles */
+.flow-diagram {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: var(--bg-color);
+  border-radius: 8px;
+}
+
+.flow-diagram svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Dark mode adjustments for SVG */
+@media (prefers-color-scheme: dark) {
+  .flow-diagram svg rect {
+    fill: var(--bg-color);
+    stroke: var(--accent-color);
+  }
+
+  .flow-diagram svg text {
+    fill: var(--text-color);
+  }
+
+  .flow-diagram svg line {
+    stroke: var(--accent-color);
+  }
+
+  .flow-diagram svg polygon {
+    fill: var(--accent-color);
+  }
+}
