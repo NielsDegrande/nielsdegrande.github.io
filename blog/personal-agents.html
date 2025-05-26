@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Personal agents</title>
+    <meta name="description" content="A look at the coming wave of personal AI companions that can operate everything from your inbox to your oven." />
+    <meta name="author" content="Niels Degrande">
+    <meta name="keywords" content="AI, artificial intelligence, software engineering, technology">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://niels.degran.de/blog/personal-agents">
+    <meta property="og:title" content="Personal agents - Niels Degrande's Blog">
+    <meta property="og:description" content="A look at the coming wave of personal AI companions that can operate everything from your inbox to your oven.">
+    <meta property="og:image" content="https://niels.degran.de/assets/niels.jpg">
+    <meta property="article:published_time" content="2025-05-26">
+    <meta property="article:author" content="Niels Degrande">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://niels.degran.de/blog/personal-agents">
+    <meta property="twitter:title" content="Personal agents - Niels Degrande's Blog">
+    <meta property="twitter:description" content="A look at the coming wave of personal AI companions that can operate everything from your inbox to your oven.">
+    <meta property="twitter:image" content="https://niels.degran.de/assets/niels.jpg">
+
+    <!-- Additional SEO tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://niels.degran.de/blog/personal-agents">
+    <meta name="generator" content="Static HTML">
+    <meta name="category" content="Technology Blog">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Personal</span>
+      </div>
+      <h1>Personal agents</h1>
+      <div class="blog-date">Published on May 26, 2025</div>
+      <div class="blog-text">
+        <p>
+          <a href="https://openai.com/sam-and-jony/" class="link-green" target="_blank" rel="noopener noreferrer">OpenAI bought io</a>.
+          It is time to start dreaming about AI companions.
+          But what exactly will they do?
+        </p>
+        <h2>Personal assistants</h2>
+        <p>
+          The most obvious use case is a personal assistant.
+          An agent that helps you with your day-to-day life:
+          managing emails, calendar, tasks, grocery lists, and more.
+          This is the natural evolution of existing assistants like Siri, Alexa, and Google Assistant.
+        </p>
+        <h2>Operate everything</h2>
+        <p>
+          While home assistants offered a glimpse into home automation,
+          AI companions will operate everything.
+        </p>
+        <p>
+          Let us take your oven as an example. The interaction would feel more like talking to a sous-chef:</p>
+        <ul>
+          <li>You snap a photo of a turkey and ask for cooking instructions.</li>
+          <li>You point your camera at the oven and ask it to preheat.</li>
+          <li>The agent dials in the temperature and notifies you when it is ready.</li>
+          <li>You slide in the turkey. The agent sets the timer and monitors the sensors.</li>
+          <li>When the bird is done, it lets you know and turns off the heat.</li>
+          <li>Hours later, from the road, you ask if the oven is off. It is. You relax.</li>
+        </ul>
+        <img class="blog-img spaced" src="../assets/blog/oven-buddy/taas.png" alt="Personal agent operating an oven" />
+
+        <p>
+          Digital twins for appliances already exist; only the MCP layer is missing.
+          So I built <a href="https://github.com/NielsDegrande/oven-buddy" class="link-green" target="_blank" rel="noopener noreferrer">it</a>.
+          It comes with a tiny simulator, no hardware purchase required.
+        </p>
+        <img class="blog-img spaced" src="../assets/blog/oven-buddy/simulator.png" alt="Personal agent operating an oven" />
+        <img class="blog-img spaced" src="../assets/blog/oven-buddy/mcp-client.png" alt="Personal agent operating an oven" />
+        <h2>Beyond the oven</h2>
+        <p>
+          This same pattern extends to your car, TV, washing machine, anything connected.
+          Over time, the agent learns your preferences and habits.
+          It knows you prefer your turkey medium-rare and your coffee black at 07:00 sharp.
+        </p>
+        <h2>All hail the AI companion</h2>
+        <p>
+          Could a smartphone handle all of this?<br>
+          Absolutely, once reliable MCP servers are in place.
+        </p>
+        <p>
+          However, io's expertise in hardware design suggests a different approach.
+          The real innovation lies in how we will interact with them.<br>
+          More immersive. More natural. More human?
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>

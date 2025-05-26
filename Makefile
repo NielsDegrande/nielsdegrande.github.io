@@ -25,10 +25,13 @@ initialize_blog:
     --model o3 \
     --file blog/$(BLOG_FILENAME).html \
     --message "Write a blog post about '$(ESCAPED_TOPIC)'. \
+                Populate the template. \
+                Stick really close to the given content. \
                 Look at other posts in the \`blog\` folder to get the style right. \
-                Use h2 tags for subheadings. \
                 Aim for a tone that is engaging and conversational. An easy read for a skilled developer. \
-                Ensure titles are in sentence case. Do not overly escape special characters. \
+                Ensure titles are in sentence case. \
+                Do not overly escape special characters. \
                 Make the HTML easy to read for a developer by starting a new line within the same <p> tag after you punctuate. \
+                Use h2 tags for subheadings. \
                 Here is the content to incorporate: $$(cat $(CONTENT_FILE))."
 	@rm $(CONTENT_FILE)
