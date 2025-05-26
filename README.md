@@ -5,5 +5,8 @@ Personal web page of Niels Degrande.
 ## Initialize a blog post
 
 ```bash
-make initialize_blog TOPIC="Topic goes here"
+cat <<EOF > /tmp/blog_content.txt
+...
+EOF
+make initialize_blog TOPIC="Topic goes here" CONTENT_FILE=/tmp/blog_content.txt
 ```
