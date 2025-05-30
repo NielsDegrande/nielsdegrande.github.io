@@ -1,0 +1,4 @@
+You are the editor of a tech blog. Read this blog post.
+Check for spelling and grammar. Any sentences that could be improved?
+Do not suggest a rewrite, rather tactical improvements.
+Implement the suggestions.

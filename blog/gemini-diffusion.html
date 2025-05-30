@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Gemini Diffusion</title>
+    <meta name="description" content="First impressions after testing Gemini Diffusion." />
+    <meta name="author" content="Niels Degrande">
+    <meta name="keywords" content="AI, artificial intelligence, Gemini Diffusion, diffusion models, text generation">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://niels.degran.de/blog/gemini-diffusion">
+    <meta property="og:title" content="Gemini Diffusion - Niels Degrande's Blog">
+    <meta property="og:description" content="First impressions after testing Gemini Diffusion.">
+    <meta property="og:image" content="https://niels.degran.de/assets/niels.jpg">
+    <meta property="article:published_time" content="2025-05-30">
+    <meta property="article:author" content="Niels Degrande">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://niels.degran.de/blog/gemini-diffusion">
+    <meta property="twitter:title" content="Gemini Diffusion - Niels Degrande's Blog">
+    <meta property="twitter:description" content="First impressions after testing Gemini Diffusion.">
+    <meta property="twitter:image" content="https://niels.degran.de/assets/niels.jpg">
+
+    <!-- Additional SEO tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://niels.degran.de/blog/gemini-diffusion">
+    <meta name="generator" content="Static HTML">
+    <meta name="category" content="Technology Blog">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Diffusion</span>
+      </div>
+      <h1>Gemini Diffusion</h1>
+      <div class="blog-date">Published on May 30, 2025</div>
+      <div class="blog-text">
+        <h2>First impressions</h2>
+        <p>
+          I just got access to Gemini Diffusion. The speed is mind-blowing.
+          From what I can tell, the model diffuses blocks of text sequentially—about two paragraphs per block.
+          Each finished block is fed back in as context for the next one.
+        </p>
+        <p>I tried it on a handful of tasks:</p>
+        <ul>
+          <li>Planning an event</li>
+          <li>Coding a small app</li>
+          <li>Solving a LeetCode-style interview question</li>
+          <li>Summarization of a long document</li>
+          <li>Question-and-answer with provided context (car rental agreement)</li>
+          <li>Writing a long essay</li>
+          <li>Generating a Markdown table</li>
+        </ul>
+        <p>
+          Formatting can be a bit messy, and you sometimes get repetition between neighboring paragraphs.
+          It also struggles to surface some of the relevant nuggets of information when the user prompt is huge (e.g. the car rental agreement).
+          Still, overall performance is quite impressive.
+        </p>
+        <h2>Riddle and Chain-of-Thought</h2>
+        <p>
+          I also tried to get the model to solve a riddle.
+          It got it wrong.
+          <img class="blog-img spaced" src="../../assets/blog/gemini-diffusion/riddle-wrong.png" alt="Gemini Diffusion screenshot showing the riddle and the wrong answer" />
+          My next thought was to try Chain-of-Thought (CoT) prompting.
+          Two things happened:
+        </p>
+        <ul>
+          <li>The <code>&lt;think&gt;</code> tags were removed from the prompt.</li>
+          <li>The model kept generating tokens until it hit roughly 2^14 tokens, then displayed nothing.</li>
+        </ul>
+        <img class="blog-img spaced" src="../../assets/blog/gemini-diffusion/riddle-prompt.png" alt="Gemini Diffusion screenshot showing the riddle prompt" />
+        <img class="blog-img spaced" src="../../assets/blog/gemini-diffusion/riddle-reply.png" alt="Gemini Diffusion screenshot showing the riddle reply" />
+        <h2>Questions and thoughts</h2>
+        <ul>
+          <li>Image generation is edging towards auto-regressive methods (4o Image Generation), just when diffusion-based text generation becomes practical.</li>
+          <li>How will inference-time reasoning work? And is the above CoT failure a sign it is already doing some reasoning behind the scenes?
+            In a diffusion world, I imagine you generate thinking text first, potentially with a couple of refinement rounds, then feed it back in to diffuse the first and subsequent response blocks.</li>
+          <li>Will users mind that it does not stream the text? You could always fake streaming by chunking the output.</li>
+          <li>Could we mix auto-regressive and diffusion approaches for text the same way we already blend them for images?</li>
+        </ul>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>
