@@ -29,9 +29,9 @@ initialize_blog:
                 Stick really close to the given content. \
                 Look at other posts in the \`blog\` folder to get the style right. \
                 Aim for a tone that is engaging and conversational. An easy read for a skilled developer. \
-                Ensure titles are in sentence case. \
+                Ensure titles are in sentence case, for example: "First impressions". \
+                The breadcrumbs is typically one word, for example: "Reviewing". \
                 Do not overly escape special characters. \
                 Make the HTML easy to read for a developer by starting a new line within the same <p> tag after you punctuate. \
                 Use h2 tags for subheadings. \
                 Here is the content to incorporate: $$(cat $(CONTENT_FILE))."
-	@rm $(CONTENT_FILE)

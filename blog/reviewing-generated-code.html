@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Reviewing generated code</title>
+    <meta name="description" content="Tips for staying sane while reviewing AI-generated pull requests." />
+    <meta name="author" content="Niels Degrande">
+    <meta name="keywords" content="AI, artificial intelligence, code review, software engineering, technology">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://niels.degran.de/blog/reviewing-generated-code">
+    <meta property="og:title" content="Reviewing generated code - Niels Degrande's Blog">
+    <meta property="og:description" content="Tips for staying sane while reviewing AI-generated pull requests.">
+    <meta property="og:image" content="https://niels.degran.de/assets/niels.jpg">
+    <meta property="article:published_time" content="2025-06-26">
+    <meta property="article:author" content="Niels Degrande">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://niels.degran.de/blog/reviewing-generated-code">
+    <meta property="twitter:title" content="Reviewing generated code - Niels Degrande's Blog">
+    <meta property="twitter:description" content="Tips for staying sane while reviewing AI-generated pull requests.">
+    <meta property="twitter:image" content="https://niels.degran.de/assets/niels.jpg">
+
+    <!-- Additional SEO tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://niels.degran.de/blog/reviewing-generated-code">
+    <meta name="generator" content="Static HTML">
+    <meta name="category" content="Technology Blog">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Reviewing</span>
+      </div>
+      <h1>Reviewing generated code</h1>
+      <div class="blog-date">Published on June&nbsp;26,&nbsp;2025</div>
+      <div class="blog-text">
+        <p>
+          These past few weeks several friends and colleagues have asked me for advice on how to review AI-generated code.
+          This post summarizes my thoughts on the matter. I will add to this post when tooling evolves and my thinking matures.
+        </p>
+        <h2>Keeping up with the pace</h2>
+        <p>
+          Reviewing code used to be a steady, manageable part of the engineering cycle.
+          Now, with coding agents and generative tools, the volume and speed of pull requests have increased dramatically.
+          Senior engineers are often left wondering how to keep up, and juniors are questioning the value of code quality when machines can generate so much, so quickly.
+        </p>
+        <p>
+          While generative engineering techniques will eventually enable faster PR review and feedback incorporation,
+          the current tooling is not quite there yet, for example GitHub Copilot's integration with GitHub and their Coding Agent, as well as Cursor's BugBot.
+
+        </p>
+        <h2>You will always be the villain</h2>
+        <p>
+          Being the reviewer can sometimes feel like playing the bad guy.
+          Trust me, this feeling is nothing new, I have been on both sides long before GenAI came along.
+          These days, fixing code based on review feedback can take longer than the initial writing, which leads to frustration on both sides.
+          Pick your battles, but stay firm on what really matters.
+        </p>
+        <h2>Automate the obvious (now with GenAI)</h2>
+        <p>
+          The best way to reduce friction is to automate what you can, so you do not have to repeat yourself in every review.
+          The more you automate, the more you can focus on what matters.
+          Agree on coding guidelines with the team, then enforce them in CI by breaking the build.
+        </p>
+        <p>
+          This approach is not new. However, today's tooling allows us to share guidelines in a more "actionable" way than a Markdown file in your docs repository.
+          Consider implementing Cursor rules or GitHub's instruction files.
+          By integrating your coding guidelines into these files, you can significantly reduce the number of review comments needed.
+          This is especially effective for establishing consistent design patterns across your codebase.
+        </p>
+        <p>
+          While traditional CI cannot enforce these nuanced guidelines, instruction files can now guide coding agents to avoid over-engineering solutions and maintain appropriate complexity levels.
+        </p>
+        <h2>Shift the burden</h2>
+        <p>
+          Use a <code>PULL_REQUEST_TEMPLATE.md</code> to set clear expectations and ensure the basics are covered before reviewers dive in.
+          Ask for self-reviews, screenshots, logs, and metrics in a data science context; anything that proves the author has thoroughly scrutinized their code.
+        </p>
+        <h2>Share the burden</h2>
+        <p>
+          If coding agents allow engineers to write more code, the result should not only be more PRs.
+          As coding agents take on more traditional junior-level tasks, junior engineers need to develop senior-level skills more quickly.
+        </p>
+        <p>
+          Let juniors learn by reviewing each other, followed by a senior, then close the loop by having them reflect on what they missed.
+          This builds stronger teams and distributes the review load.
+        </p>
+        <h2>Moving target</h2>
+        <p>
+          The tools and techniques for code review will keep evolving, and so will the challenges we face.
+          For now, focus on what you can automate, set clear expectations, and help your team grow into their expanding responsibilities.
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>
