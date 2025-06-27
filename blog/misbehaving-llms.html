@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Misbehaving LLMs</title>
+    <meta name="description" content="A lighthearted look at the odd ways large language models sometimes act up and what we can learn from them." />
+    <meta name="author" content="Niels Degrande">
+    <meta name="keywords" content="AI, artificial intelligence, software engineering, technology">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://niels.degran.de/blog/misbehaving-llms">
+    <meta property="og:title" content="Misbehaving LLMs - Niels Degrande's Blog">
+    <meta property="og:description" content="A lighthearted look at the odd ways large language models sometimes act up and what we can learn from them.">
+    <meta property="og:image" content="https://niels.degran.de/assets/niels.jpg">
+    <meta property="article:published_time" content="2025-06-27">
+    <meta property="article:author" content="Niels Degrande">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://niels.degran.de/blog/misbehaving-llms">
+    <meta property="twitter:title" content="Misbehaving LLMs - Niels Degrande's Blog">
+    <meta property="twitter:description" content="A lighthearted look at the odd ways large language models sometimes act up and what we can learn from them.">
+    <meta property="twitter:image" content="https://niels.degran.de/assets/niels.jpg">
+
+    <!-- Additional SEO tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://niels.degran.de/blog/misbehaving-llms">
+    <meta name="generator" content="Static HTML">
+    <meta name="category" content="Technology Blog">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Misbehaving</span>
+      </div>
+      <h1>Misbehaving LLMs</h1>
+      <div class="blog-date">Published on June 27, 2025</div>
+      <div class="blog-text">
+        <p>
+          Every now and then, I encounter odd LLM behavior.
+          I find it both funny and insightful.
+        </p>
+        <p>
+          The latter because one can philosophize about how this behavior emerged.
+        </p>
+        <h2>When language switches mid-thought</h2>
+        <p>
+          One example is with DeepSeek-R1-Distill-Qwen-32B, 0528:
+        </p>
+        <img class="blog-img spaced" src="../../assets/blog/misbehaving-llms/deepseek.png" alt="DeepSeek model switching from English to Chinese mid-thought" />
+        <p>
+          Halfway through its thinking trace, you can see the switch to Chinese.
+          If you ask ChatGPT to translate the Chinese for you:
+        </p>
+        <img class="blog-img spaced" src="../../assets/blog/misbehaving-llms/translation.png" alt="ChatGPT translation of the Chinese text" />
+        <p>
+          You can see the thought process still makes sense.
+          It is like a bilingual child switching languages without losing their train of thought.
+        </p>
+        <p>
+          The way I reason about this is that the LLM thinks in a very high-dimensional latent space.
+          Language is just one dimension.
+          To get to the outcome it wants, it might "decide" it is easier to move along the language dimension,
+          even though training and supervised fine-tuning (SFT) will disincentivize it from doing so, as nearly all training material is in one language.
+          Likely, reinforcement fine-tuning (RFT) pushes in the same direction, as, for example, on coding problems a multi-language solution would not compile or run.
+        </p>
+        <h2>A double-take from ChatGPT</h2>
+        <p>
+          Another example: I have a weekly ChatGPT task to tell me what is on in Stockholm.
+        </p>
+        <img class="blog-img spaced" src="../../assets/blog/misbehaving-llms/chatgpt.png" alt="ChatGPT repeating its response with slight variations" />
+        <p>
+          This week it gave the answer, then wrote "-- End of turn #2." and then repeated with a slight variation of the answer.
+          I am not sure if this is an engineering glitch with the task feature or rather an accidental occurrence of budget forcing, with the turns acting like a "wait".
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>

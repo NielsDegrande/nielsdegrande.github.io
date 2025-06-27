@@ -26,11 +26,11 @@ initialize_blog:
     --file blog/$(BLOG_FILENAME).html \
     --message "Write a blog post about '$(ESCAPED_TOPIC)'. \
                 Populate the template. \
-                Stick really close to the given content. \
+                Stick really close to the given content, but correct all spelling and grammar. \
                 Look at other posts in the \`blog\` folder to get the style right. \
                 Aim for a tone that is engaging and conversational. An easy read for a skilled developer. \
-                Ensure titles are in sentence case, for example: "First impressions". \
-                The breadcrumbs is typically one word, for example: "Reviewing". \
+                Ensure titles are in sentence case, for example: First impressions. \
+                The breadcrumbs is typically one word, for example: Reviewing. \
                 Do not overly escape special characters. \
                 Make the HTML easy to read for a developer by starting a new line within the same <p> tag after you punctuate. \
                 Use h2 tags for subheadings. \
