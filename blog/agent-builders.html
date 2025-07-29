@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Agent builders</title>
+    <meta name="description" content="A developer-friendly tour of no-code, low-code and pro-code agent builder platforms." />
+    <meta name="author" content="Niels Degrande">
+    <meta name="keywords" content="AI, artificial intelligence, software engineering, technology">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://niels.degran.de/blog/agent-builders">
+    <meta property="og:title" content="Agent builders - Niels Degrande's Blog">
+    <meta property="og:description" content="A developer-friendly tour of no-code, low-code and pro-code agent builder platforms.">
+    <meta property="og:image" content="https://niels.degran.de/assets/niels.jpg">
+    <meta property="article:published_time" content="2025-07-22">
+    <meta property="article:author" content="Niels Degrande">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://niels.degran.de/blog/agent-builders">
+    <meta property="twitter:title" content="Agent builders - Niels Degrande's Blog">
+    <meta property="twitter:description" content="A developer-friendly tour of no-code, low-code and pro-code agent builder platforms.">
+    <meta property="twitter:image" content="https://niels.degran.de/assets/niels.jpg">
+
+    <!-- Additional SEO tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://niels.degran.de/blog/agent-builders">
+    <meta name="generator" content="Static HTML">
+    <meta name="category" content="Technology Blog">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Agent builders</span>
+      </div>
+      <h1>Agent builders</h1>
+      <div class="blog-date">Published on July 22, 2025</div>
+      <div class="blog-text">
+        <p>Agent builders are popping up everywhere.
+        They promise to let us wire up reasoning loops, memory and tools without ever opening a code editor.
+        But not all builders are created equal, so let's group them into a few archetypes.</p>
+
+        <h2>No-code / form-like builders</h2>
+        <ul>
+          <li>CustomGPT</li>
+          <li>Amazon Q</li>
+          <li>Copilot Studio</li>
+          <li>LangGraph Platform</li>
+        </ul>
+        <p>
+          No-code tools democratize AI for business and semi-technical users.
+          They are part of the self-serve play and will only get more capable.
+          Expect built-in reasoning loops, reflection and memory that can be enabled with a single checkbox.
+          The real power rests in the catalog of connectors—Slack, Teams, SharePoint, Notion, Trello and anything you can browse in an MCP registry.
+        </p>
+        <p>
+          Shadow AI will be a major challenge: an employee spins up an agent that nobody owns after they leave.
+          I recommend to keep the agent builder platform inside IT, add guard-rails through an LLM gateway, and establish FinOps practices for cost allocation.
+          Security-wise you want pass-through authentication, user-level memory and the usual network controls.
+        </p>
+      </p>
+        <h2>Low-code workflow and app builders</h2>
+        <ul>
+          <li>Retool</li>
+          <li>n8n</li>
+          <li>Power Platform</li>
+        </ul>
+        <p>
+          Low-code has been around forever—from classic BPM suites to DataRobot for ML—and adoption has always stayed niche.
+          GenAI has not changed that equation yet, even if influencers share eye-catching outreach workflows on social media.
+          Generative process automation might become a killer use case, but the value is still to be proven.</p>
+        <p>
+          For small internal apps with a handful of users I am positive.
+          Architecture boards should openly ask: could this be a low code agent?
+          Just avoid the fate of “a thousand PowerBIs” by tracking ownership and cost centres.
+        </p>
+        <p>
+          For anything large, external or business-critical one might think twice: the total cost of ownership tends to explode due to seat pricing, logic escapes into Python/TS blocks, edge cases start to pile up, and limited code reusability makes spaghetti everywhere.
+        </p>
+        <h2>Workflow-first agent builders</h2>
+        <ul>
+          <li>Dify.ai</li>
+          <li>Langflow</li>
+          <li>Flowise</li>
+        </ul>
+        <p>
+          These products wrap LangChain-like frameworks with a visual layer.
+          You get more building blocks than Retool or n8n, but they lag in enterprise polish and UI automation.
+        </p>
+        <h2>Embedded builders</h2>
+        <ul>
+          <li>Salesforce Agentforce</li>
+          <li>SAP Joule Agents</li>
+          <li>ServiceNow AI Agent Studio</li>
+        </ul>
+        <p>
+          Large platforms are baking agent builders directly into their ecosystems.
+          That keeps data gravity on their side and simplifies auth, at the cost of vendor lock-in.
+        </p>
+        <h2>Pro-code agents</h2>
+        <ul>
+          <li>LLM provider SDKs or LLM gateways</li>
+          <li>Frameworks like LangChain, DSPy, Haystack</li>
+        </ul>
+        <p>
+          When more control is needed, e.g., excessive context engineering, niche integrations, custom logic to complement the agent, etc., pro-code agents are the way to go.
+          They are the most flexible, but also the most complex to build and potentially maintain.
+          The upfront cost is high, but the long-term cost can (often) be lower, especially when you scale.
+        </p>
+        <h2>Choosing the right tool</h2>
+        <p>
+          Start with a no-code or low-code builder to prototype, show progress quickly, and find product-market fit.
+          As edge cases pile up and requirements become more complex, a pro-code rewrite might be necessary to optimize and scale.
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>
