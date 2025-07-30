@@ -79,9 +79,11 @@
       <h1>Agent builders</h1>
       <div class="blog-date">Published on July 22, 2025</div>
       <div class="blog-text">
-        <p>Agent builders are popping up everywhere.
-        They promise to let us wire up reasoning loops, memory and tools without ever opening a code editor.
-        But not all builders are created equal, so let's group them into a few archetypes.</p>
+        <p>
+          Agent builders are popping up everywhere, promising to let us wire up reasoning loops, memory, and tools without ever opening a code editor.
+          But not all builders are created equal—each serves different use cases and skill levels.
+          Let's explore the main archetypes to help you choose the right tool for your needs.
+        </p>
 
         <h2>No-code / form-like builders</h2>
         <ul>
@@ -91,69 +93,74 @@
           <li>LangGraph Platform</li>
         </ul>
         <p>
-          No-code tools democratize AI for business and semi-technical users.
-          They are part of the self-serve play and will only get more capable.
-          Expect built-in reasoning loops, reflection and memory that can be enabled with a single checkbox.
-          The real power rests in the catalog of connectors—Slack, Teams, SharePoint, Notion, Trello and anything you can browse in an MCP registry.
+          No-code tools democratize AI for business and semi-technical users, fitting perfectly into the self-serve enterprise trend.
+          These platforms are rapidly evolving to include built-in reasoning loops, reflection, and memory that can be enabled with a simple checkbox.
+          Their strength lies in extensive connector catalogs—think Slack, Teams, SharePoint, Notion, Trello, and a growing ecosystem of MCP servers.
         </p>
         <p>
-          Shadow AI will be a major challenge: an employee spins up an agent that nobody owns after they leave.
-          I recommend to keep the agent builder platform inside IT, add guard-rails through an LLM gateway, and establish FinOps practices for cost allocation.
-          Security-wise you want pass-through authentication, user-level memory and the usual network controls.
+          However, shadow AI poses a significant governance challenge.
+          For example when employees create agents that become orphaned after they leave. Furthermore, organizations face security and compliance risks.
+          To mitigate this, keep agent builder platforms within IT oversight, implement guardrails through LLM gateways, and establish FinOps practices for proper cost allocation.
+          From a security perspective, prioritize pass-through authentication, user-level memory isolation, and the usual network controls.
         </p>
-      </p>
-        <h2>Low-code workflow and app builders</h2>
+        <h2>Low-code workflow, agent and app builders</h2>
         <ul>
           <li>Retool</li>
           <li>n8n</li>
           <li>Power Platform</li>
         </ul>
         <p>
-          Low-code has been around forever—from classic BPM suites to DataRobot for ML—and adoption has always stayed niche.
-          GenAI has not changed that equation yet, even if influencers share eye-catching outreach workflows on social media.
-          Generative process automation might become a killer use case, but the value is still to be proven.</p>
+          Low-code platforms have existed for decades—from classic BPM suites to DataRobot for ML—yet adoption has remained niche.
+          GenAI has not fundamentally changed this dynamic, despite influencers showcasing eye-catching outreach workflows on social media.
+          While generative process automation shows promise as a potential killer use case, the business value remains largely unproven.</p>
         <p>
-          For small internal apps with a handful of users I am positive.
-          Architecture boards should openly ask: could this be a low code agent?
-          Just avoid the fate of “a thousand PowerBIs” by tracking ownership and cost centres.
+          That said, low-code agents excel for small internal applications with limited user bases.
+          Architecture review boards should openly ask: "Could this be a low code agent?".
+          Avoid the fate of "a thousand PowerBIs" by tracking ownership and cost centres.
         </p>
         <p>
           For anything large, external or business-critical one might think twice: the total cost of ownership tends to explode due to seat pricing, logic escapes into Python/TS blocks, edge cases start to pile up, and limited code reusability makes spaghetti everywhere.
         </p>
-        <h2>Workflow-first agent builders</h2>
+
+        <h2>AI-first workflow and agent builders</h2>
         <ul>
           <li>Dify.ai</li>
           <li>Langflow</li>
           <li>Flowise</li>
         </ul>
         <p>
-          These products wrap LangChain-like frameworks with a visual layer.
-          You get more building blocks than Retool or n8n, but they lag in enterprise polish and UI automation.
+          These platforms wrap LangChain-like frameworks with drag and drop visual interfaces.
+          While they offer more AI-specific building blocks than general workflow tools like Retool or n8n, they typically lag behind in enterprise polish and UI automation capabilities.
         </p>
-        <h2>Embedded builders</h2>
+        <h2>Embedded agent builders</h2>
         <ul>
           <li>Salesforce Agentforce</li>
           <li>SAP Joule Agents</li>
           <li>ServiceNow AI Agent Studio</li>
         </ul>
         <p>
-          Large platforms are baking agent builders directly into their ecosystems.
-          That keeps data gravity on their side and simplifies auth, at the cost of vendor lock-in.
+          Enterprise software giants are taking a different approach by embedding agent builders directly into their existing ecosystems.
+          This strategy leverages data gravity to keep users within their platform while simplifying authentication and integration.
+          The trade-off, of course, is increased vendor lock-in—but for organizations already committed to these platforms, the seamless integration can outweigh the constraints.
         </p>
         <h2>Pro-code agents</h2>
         <ul>
           <li>LLM provider SDKs or LLM gateways</li>
-          <li>Frameworks like LangChain, DSPy, Haystack</li>
+          <li>Frameworks like LangChain, DSPy, Haystack, etc.</li>
         </ul>
         <p>
-          When more control is needed, e.g., excessive context engineering, niche integrations, custom logic to complement the agent, etc., pro-code agents are the way to go.
-          They are the most flexible, but also the most complex to build and potentially maintain.
-          The upfront cost is high, but the long-term cost can (often) be lower, especially when you scale.
+          At the far end of the spectrum, pro-code solutions become essential when you need maximum control—think advanced context engineering, specialized integrations, or custom logic that complements your agent's capabilities.
+          While these solutions offer unmatched flexibility, they come with complexity in both development and ongoing maintenance.
+          The upfront investment is substantial, but the long-term economics often favor pro-code, particularly at scale where licensing and hosting costs of visual builders can become prohibitive, as well as runtime optimizations a necessity.
         </p>
         <h2>Choosing the right tool</h2>
         <p>
-          Start with a no-code or low-code builder to prototype, show progress quickly, and find product-market fit.
-          As edge cases pile up and requirements become more complex, a pro-code rewrite might be necessary to optimize and scale.
+          The path forward is not binary—most successful AI initiatives follow a progressive approach.
+          Begin with no-code or low-code builders to rapidly prototype, demonstrate value, and discover product-market fit.
+          This strategy allows you to validate concepts quickly and gather real-world feedback.
+        </p>
+        <p>
+          However, as edge cases accumulate and requirements grow more sophisticated, you may find yourself needing to transition to pro-code solutions to maintain performance and scalability.
         </p>
       </div>
     </div>
