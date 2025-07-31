@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Agent mesh</title>
+    <meta name="description" content="Exploring why enterprises may need an agent mesh and how Kafka fits." />
+    <meta name="author" content="Niels Degrande">
+    <meta name="keywords" content="AI, artificial intelligence, software engineering, technology">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://niels.degran.de/blog/agent-mesh">
+    <meta property="og:title" content="Agent mesh - Niels Degrande's Blog">
+    <meta property="og:description" content="Exploring why enterprises may need an agent mesh and how Kafka fits.">
+    <meta property="og:image" content="https://niels.degran.de/assets/niels.jpg">
+    <meta property="article:published_time" content="2025-07-31">
+    <meta property="article:author" content="Niels Degrande">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://niels.degran.de/blog/agent-mesh">
+    <meta property="twitter:title" content="Agent mesh - Niels Degrande's Blog">
+    <meta property="twitter:description" content="Exploring why enterprises may need an agent mesh and how Kafka fits.">
+    <meta property="twitter:image" content="https://niels.degran.de/assets/niels.jpg">
+
+    <!-- Additional SEO tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://niels.degran.de/blog/agent-mesh">
+    <meta name="generator" content="Static HTML">
+    <meta name="category" content="Technology Blog">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Agent mesh</span>
+      </div>
+      <h1>Agent mesh</h1>
+      <div class="blog-date">Published on July 31, 2025</div>
+      <div class="blog-text">
+        <p>
+          As I wrote in earlier posts e.g., <a href="multi-agent.html" class="link-green">When to multi-agent?</a>,
+          I believe agents should work in a network, not a hierarchy, similar to how the internet evolved.
+          I heard the phrase agent mesh recently, which covers that idea well.
+        </p>
+        <p>
+          A colleague pointed me to <a href="https://www.confluent.io/blog/google-agent2agent-protocol-needs-kafka/" class="link-green" target="_blank" rel="noopener noreferrer">this post</a> by the Confluent team the other day.
+          Think of it as enterprise application integration for agents, or if you prefer, <em>enterprise agent integration</em>.
+          At a conceptual level, I subscribe to this view, as I expect autonomous agents to sit at the heart of future business process automation.
+        </p>
+
+        <h2>Where does Kafka come in?</h2>
+        <p>The Confluent article lies at the intersection of three challenges.</p>
+
+        <ol>
+          <li>
+            Agent communication <strong>inside the organization</strong>.
+            I doubt you would expose Kafka directly for inter-organizational traffic, although an API façade could work.
+          </li>
+          <li>
+            <strong>One-to-many or many-to-many patterns</strong>.
+            For one-to-one or many-to-one, you can probably use agent-to-agent protocols without an event broker.
+          </li>
+          <li>
+            <strong>High-volume</strong> event-based workloads that need retention and replay—far beyond what a simple message broker offers.
+          </li>
+        </ol>
+
+        <h2>Questions worth asking</h2>
+        <p>When I think about a preferred agent mesh architecture, a few questions immediately pop up.</p>
+
+        <ul>
+          <li>Will most A2A use cases be intra- or inter-organization?</li>
+          <li>What patterns will "embedded" agents like Slack or SAP support?</li>
+          <li>How many scenarios truly need one-to-many or many-to-many communication?</li>
+          <li>What volume of interactions should we expect?</li>
+          <li>How to address all other non-functional requirements: security, monitoring, observability, and so on?</li>
+        </ul>
+        <p>
+          I hope the answer to the first question is "inter-organization", fostering tighter collaboration between teams and organizations.
+          Intra-organization use cases can be more common, but to a good degree can be handled (more deterministically) by MCP as well.
+          When it comes to one-to-many or many-to-many, I do not expect this to be a common pattern, although persisting events for analytics is always valuable.
+        </p>
+        <p>
+          User-initiated interactions from employees will likely be low volume.
+          End-user interactions could hit mid to high volume.
+          Machine-triggered flows—think EDI-style integrations—could be extremely high.
+        </p>
+
+        <h2>Crawl, walk, run</h2>
+        <p>
+          The Confluent post is thought-provoking, but we need to crawl before we try to sprint.
+          Today, very few agents are live in production, and even fewer rely on agent-to-agent protocols.
+        </p>
+        <p>
+          Let's find concrete use cases, put them in production, scale them, and only then decide how to avoid the quadratic explosion of pairwise interactions.
+          By then the protocols, the technology landscape, and our own understanding will have evolved.
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>

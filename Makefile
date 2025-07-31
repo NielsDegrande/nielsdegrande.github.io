@@ -27,7 +27,7 @@ initialize_blog:
     --message "Write a blog post about '$(ESCAPED_TOPIC)'. \
                 Populate the template. \
                 Stick really close to the given content, but correct all spelling and grammar. \
-                Look at other posts in the \`blog\` folder to get the style right. \
+                Look at other posts in the \`blog\` folder to get the style right. Read at least 3 posts before writing. \
                 Aim for a tone that is engaging and conversational. An easy read for a skilled developer. \
                 Ensure titles are in sentence case, for example: First impressions. \
                 The breadcrumbs is typically one word, for example: Reviewing. \
