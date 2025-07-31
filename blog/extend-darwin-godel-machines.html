@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Extend Darwin Gödel machines</title>
+    <meta name="description" content="Extend Darwin Gödel Machines for self-improving coding agents." />
+    <meta name="author" content="Niels Degrande">
+    <meta name="keywords" content="AI, artificial intelligence, software engineering, technology">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://niels.degran.de/blog/extend-darwin-godel-machines">
+    <meta property="og:title" content="Extend Darwin Gödel machines - Niels Degrande's Blog">
+    <meta property="og:description" content="Extend Darwin Gödel Machines for self-improving coding agents.">
+    <meta property="og:image" content="https://niels.degran.de/assets/niels.jpg">
+    <meta property="article:published_time" content="2025-07-31">
+    <meta property="article:author" content="Niels Degrande">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://niels.degran.de/blog/extend-darwin-godel-machines">
+    <meta property="twitter:title" content="Extend Darwin Gödel machines - Niels Degrande's Blog">
+    <meta property="twitter:description" content="Extend Darwin Gödel Machines for self-improving coding agents.">
+    <meta property="twitter:image" content="https://niels.degran.de/assets/niels.jpg">
+
+    <!-- Additional SEO tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://niels.degran.de/blog/extend-darwin-godel-machines">
+    <meta name="generator" content="Static HTML">
+    <meta name="category" content="Technology Blog">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Evolving</span>
+      </div>
+      <h1>Extend Darwin Gödel machines</h1>
+      <div class="blog-date">Published on July 31, 2025</div>
+      <div class="blog-text">
+        <p>
+          How far can we push the Darwin Gödel Machine concept? Let's find out!
+        </p>
+        <p>
+          <strong>Darwin machines</strong> apply variation, selection and retention to any problem—just like biological evolution, but for algorithms.
+          <strong>Gödel machines</strong> rewrite any part of their own code, including their self-improvement logic, but only if they can prove the rewrite improves performance.
+        </p>
+        <p>
+          Combine them, and you get an AI that evolves better versions of itself through rigorous self-modification.
+        </p>
+        <p>
+          Short on time?
+          The source is on <a href="https://github.com/NielsDegrande/agent-evolve" target="_blank" rel="noopener">GitHub</a>.
+        </p>
+
+        <h2 id="reference-literature">Reference literature</h2>
+        <p>
+          This project stands on three pillars of research, each worth diving into:
+        </p>
+
+        <h3>Deep reinforcement learning</h3>
+        <p>
+          If you are new to this space, <a href="https://docs.unsloth.ai/basics/reinforcement-learning-rl-guide" target="_blank" rel="noopener">Unsloth's RL guide</a> and
+          <a href="https://learn.deeplearning.ai/courses/post-training-of-llms/" target="_blank" rel="noopener">DeepLearning.AI's post-training course</a> provide excellent primers.
+          For deeper implementation details, check out <a href="https://github.com/alessiodm/drl-zh" target="_blank" rel="noopener">alessiodm's deep RL course</a>.
+        </p>
+
+        <h3>Evolutionary coding agents</h3>
+        <p>
+          The idea that variation and selection apply to source code just as well as to DNA is not new.
+          <a href="https://deepmind.google/discover/blog/competitive-programming-with-alphacode/" target="_blank" rel="noopener">AlphaCode</a> performed well in competitive programming,
+          <a href="https://deepmind.google/discover/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/" target="_blank" rel="noopener">FunSearch</a> discovered new mathematical insights, and
+          <a href="https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/AlphaEvolve.pdf" target="_blank" rel="noopener">AlphaEvolve</a> designs advanced algorithms autonomously.
+        </p>
+
+        <h3>Darwin Gödel machines (DGM)</h3>
+        <p>
+          The <a href="https://arxiv.org/pdf/2505.22954" target="_blank" rel="noopener">original paper</a> fuses evolution with empirical evaluation.
+          <a href="https://sakana.ai/dgm/" target="_blank" rel="noopener">Sakana AI</a> (by the authors) and
+          <a href="https://aipapersacademy.com/darwin-godel-machine/" target="_blank" rel="noopener">AI Papers Academy</a> provide a digestible breakdown.
+          Here we borrow the spirit, but skip most of the heavy machinery.
+        </p>
+
+        <h2 id="the-reinforcement-learning-question">The reinforcement learning question</h2>
+        <p>
+          Could RL be helpful here? Defining a usable policy over code diffs is hard.
+          Discrete code edits (insert, mutate, delete) could work, but they feel cumbersome for higher-level coding patterns.
+          If the policy is another transformer, deep RL approaches like GRPO become feasible.
+        </p>
+        <p>
+          For this exercise, I opted against fine-tuning a neural network.
+        </p>
+
+        <h2 id="genetic-algorithms-and-multi-agent-strategies">Genetic algorithms and multi-agent strategies</h2>
+        <p>
+          How different is evolving a standalone algorithm (like FunSearch and AlphaEvolve) from evolving an agent?
+          Not too different.
+          However, when I pushed this idea to its logical conclusion, unifying the orchestrating agent and the underlying coding agent, it turned into an infinity mirror.
+        </p>
+        <p>
+          Would it be beneficial to go multi-agent, potentially in a GAN-style fashion? Could the orchestrator figure this out by itself?
+          Early experiments suggest yes, inspired by web search results.
+        </p>
+        <p>
+          Genetic heuristics also show promise.
+          Instead of only developing linearly as DGM does, we could merge two or more agents.
+          Providing multiple reference agents to the orchestrator achieves this implicitly as part of our generative approach.
+        </p>
+
+        <h2 id="technology-choices">Technology choices</h2>
+        <p>
+          Both the orchestrator and the generated agents leverage <a href="https://github.com/huggingface/smolagents" target="_blank" rel="noopener"><code>smolagents</code></a> primitives.
+          This is higher-level than most similar efforts—the idea is to gain performance by assembling tool chains, including advanced agentic patterns, and context engineering, not by rewriting fundamental agent blocks.
+        </p>
+        <p>
+          The orchestrator maintains a weighted reservoir of past agents. Higher benchmark scores increase sampling probability.
+          It breeds fresh candidates, evaluates them on GSM8K, and repeats this inner loop <code>N</code> times.
+        </p>
+        <p>
+          Similar to bootstrapping, after <code>N</code> inner iterations, the best coding agent could attempt to improve the orchestrator itself.
+          We then repeat this process <code>M</code> times. This is not implemented yet.
+        </p>
+
+        <h2 id="results-and-insights">Results and insights</h2>
+        <p>
+          The first run was intentionally minimal: <code>N = 20</code>, <code>M = 0</code>, 20 questions sampled from GSM8K only.
+          At this scale, noise is a big factor.
+          Still, the score distribution tells a compelling story.
+        </p>
+        <img class="blog-img spaced" src="../assets/blog/extend-darwin-godel-machines/agent_evolution.png" alt="Score distribution of evolved agents showing many failures at zero but some high performers" />
+        <p>
+          Many candidates flatline at zero. Often because the orchestrator hallucinates smolagents kwargs or dynamic tool (collection) names that cannot be caught statically.
+        </p>
+        <p>
+          The current top performer is a team of three agents where two produce answers and a third finds consensus.
+          If no consensus emerges, it goes with the "superior" answer based on confidence scores.
+        </p>
+        <p>
+          Often generated strategies involved:
+        </p>
+        <ul>
+          <li><strong>Specialized agents</strong> focused on single tools (e.g., web search only)</li>
+          <li><strong>Critic agents</strong> that add reflection rounds before answering</li>
+          <li><strong>Custom tooling</strong> that extends beyond the base smolagents toolkit</li>
+        </ul>
+        <p>
+          Looking at the results, my hunch is the next generation to outperform the consensus-agent would be a merger of the consensus approach with the critic pattern.
+          The latter scores slightly below the consensus-agent but consistently high and complements it well.
+        </p>
+        <p>
+          For now, it seems better-performing agents are essentially brute-forcing solutions by answering or reviewing the same question multiple times.
+          It improves benchmark scores, at the cost of burning a lot more tokens per question answered.
+        </p>
+        <p>
+          A next step could be <strong>multi-objective optimization</strong> that incorporates algorithm length, average token consumption, and execution time.
+          This should ensure that elegant solutions beat brute force.
+        </p>
+      </div>
+    </div>
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>

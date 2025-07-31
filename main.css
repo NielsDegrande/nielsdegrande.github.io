@@ -63,6 +63,11 @@ h2 {
   padding: 10px 0 20px 0;
 }
 
+h3 {
+  font-size: 120%;
+  font-weight: lighter;
+}
+
 a {
   color: #42b983;
   text-decoration: none;

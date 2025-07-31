@@ -1,0 +1,17 @@
+---
+globs: *.html
+---
+
+# HTML
+
+## Paragraph Formatting
+
+When formatting HTML content, especially for blog posts, follow this specific structure for paragraph tags:
+
+```html
+<p>
+  First sentence of the paragraph.
+  Second sentence continues on a new line.
+  Each sentence gets its own line with proper indentation.
+</p>
+```
