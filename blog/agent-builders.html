@@ -99,7 +99,7 @@
         </p>
         <p>
           However, shadow AI poses a significant governance challenge.
-          For example when employees create agents that become orphaned after they leave. Furthermore, organizations face security and compliance risks.
+          For example, when employees create agents that become orphaned after they leave. Furthermore, organizations face security and compliance risks.
           To mitigate this, keep agent builder platforms within IT oversight, implement guardrails through LLM gateways, and establish FinOps practices for proper cost allocation.
           From a security perspective, prioritize pass-through authentication, user-level memory isolation, and the usual network controls.
         </p>
@@ -115,11 +115,11 @@
           While generative process automation shows promise as a potential killer use case, the business value remains largely unproven.</p>
         <p>
           That said, low-code agents excel for small internal applications with limited user bases.
-          Architecture review boards should openly ask: "Could this be a low code agent?".
+          Architecture review boards should openly ask: "Could this be a low-code agent?".
           Avoid the fate of "a thousand PowerBIs" by tracking ownership and cost centres.
         </p>
         <p>
-          For anything large, external or business-critical one might think twice: the total cost of ownership tends to explode due to seat pricing, logic escapes into Python/TS blocks, edge cases start to pile up, and limited code reusability makes spaghetti everywhere.
+          For anything large, external or business-critical, one might think twice: the total cost of ownership tends to explode due to seat pricing, logic escapes into Python/TS blocks, edge cases start to pile up, and limited code reusability makes spaghetti everywhere.
         </p>
 
         <h2>AI-first workflow and agent builders</h2>
@@ -161,6 +161,15 @@
         </p>
         <p>
           However, as edge cases accumulate and requirements grow more sophisticated, you may find yourself needing to transition to pro-code solutions to maintain performance and scalability.
+        </p>
+        <h2>Addendum (July 31st): Opal by Google</h2>
+        <p>
+          Google has released <a href="https://developers.googleblog.com/en/introducing-opal/" class="link-green" target="_blank" rel="noopener noreferrer">Opal</a>, a no-code builder for "mini-apps".
+          I tried it briefly. I was not that impressed. The agentic workflow I tried to generate was not that good.
+          Likely because the notion of routing is not part of its capabilities yet.
+          Using one of their existing apps (book recommender) was not great either: it took ages to run, and then the web page was not visually appealing at all, e.g., no book artwork, broken links, etc.
+          The idea of prompting your workflow is key to advance no/low-code builders though, and I am sure the other parts will improve over time.
+        <img class="blog-img spaced" src="../../assets/blog/agent-builders/opal.png" alt="Screenshot of Google Opal agent builder" />
         </p>
       </div>
     </div>
