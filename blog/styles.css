@@ -52,6 +52,22 @@
   height: auto;
 }
 
+/* Video styles */
+.video-container {
+  margin: 2em 0;
+  text-align: center;
+}
+
+.video-container video {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.video-caption {
+  margin-top: 0.5em;
+  color: #888;
+}
+
 /* Dark mode adjustments for SVG */
 @media (prefers-color-scheme: dark) {
   .flow-diagram svg rect {

@@ -81,7 +81,7 @@
       <div class="blog-text">
         <p>
           A vacation project that explores the OpenAI Agents SDK while integrating concepts closer to the capability frontier.
-          My goal was to combine multi-agent collaboration, realtime voice, MCP servers, and computer use into a practical demonstration.
+          My goal was to combine multi-agent collaboration, realtime voice, Twilio's Media Streams API, MCP servers, and computer use into a practical demonstration.
         </p>
 
         <h2>The problem</h2>
@@ -94,7 +94,7 @@
         <h2>Reflections</h2>
         <ul>
           <li>The Agents SDK is sparsely documented. You will have to read the source code to get a real-world implementation to work.</li>
-          <li>No parity between Python and Typescript. I started with Python, but due to limitation in realtime agents and computer use, I had to switch to Typescript. Reading the documentation again now, I can see some of the issues are partially resolved already.</li>
+          <li>No parity between Python and Typescript. I started with Python, but due to limitation in realtime voice agents and computer use, I had to switch to Typescript. Reading the documentation again now, I can see some of the issues are partially resolved already.</li>
           <li>Voice latency is a hurdle, especially when tools are involved. The demo below is sped up 4x.</li>
           <li>I never managed to make the agent acknowledge the question before diving into tool use, leaving an awkward silence at the start of every interaction.</li>
           <li>Visualizing the conversation is not trivial or out-of-the-box. Transcripts arrive (understandably) late, requiring additional processing. It is also difficult to line up the conversation with the computer use screenshots, especially when several agents and tools are involved.</li>
@@ -103,18 +103,18 @@
 
         <h2>Demo</h2>
         <p>
-          A short video of the agent in action.
+          A short video of the agent in action. You only see the conversation monitoring, the call itself happened from my phone through Twilio.
           The code can be found <a href="https://github.com/NielsDegrande/oopsops-server" target="_blank" rel="noopener">here</a> and <a href="https://github.com/NielsDegrande/oopsops-ui" target="_blank" rel="noopener">here</a>.
         </p>
-      <div class="video-container" style="margin: 2em 0; text-align: center;">
-        <video controls poster="../assets/blog/oopsops/oopsops_4xd.jpg" style="max-width: 100%; border-radius: 8px;">
-          <source src="../assets/blog/oopsops/oopsops_4xd.mp4" type="video/mp4">
-          Your browser does not support the video tag. You can <a href="../assets/blog/oopsops/oopsops_4xd.mp4">download the video here</a>.
-        </video>
-        <div style="margin-top: 0.5em; color: #888;">
-          <small>OopsOps in action, sped up 4x.</small>
+        <div class="video-container">
+          <video controls poster="../assets/blog/oopsops/oopsops_4xd.jpg">
+            <source src="../assets/blog/oopsops/oopsops_4xd.mp4" type="video/mp4">
+            Your browser does not support the video tag. You can <a href="../assets/blog/oopsops/oopsops_4xd.mp4">download the video here</a>.
+          </video>
+          <div class="video-caption">
+            <small>OopsOps in action, sped up 4x.</small>
+          </div>
         </div>
-      </div>
       </div>
     </div>
     <script src="../scripts/theme.js"></script>
