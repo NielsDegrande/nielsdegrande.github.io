@@ -43,6 +43,7 @@ body {
   color: var(--text-color);
   display: table-cell;
   font-family: "Fira Code", monospace;
+  vertical-align: middle;
 }
 
 h1 {
@@ -69,7 +70,7 @@ h3 {
 }
 
 a {
-  color: #42b983;
+  color: var(--accent-color);
   text-decoration: none;
 }
 
@@ -85,16 +86,6 @@ a {
   position: relative;
 }
 
-.horizontal-line {
-  background-color: #42b983;
-  height: 2px;
-  max-width: 128px;
-  position: absolute;
-  top: 50%;
-  width: 16vw;
-  z-index: 1;
-}
-
 .image-circle {
   border-radius: 100%;
   left: 50%;
@@ -102,10 +93,6 @@ a {
   position: absolute;
   width: 128px;
   z-index: 2;
-}
-
-.image-circle:hover {
-  color: #42b983;
 }
 
 .icon {
@@ -116,7 +103,7 @@ a {
 }
 
 .icon:hover {
-  color: #42b983;
+  color: var(--accent-color);
 }
 
 .icons {
@@ -125,20 +112,12 @@ a {
 }
 
 .stress {
-  color: #42b983;
+  color: var(--accent-color);
   font-weight: normal;
 }
 
-#green-left {
-  left: 0%;
-}
-
-#green-right {
-  right: 0%;
-}
-
 .button-rounded {
-  background-color: #42b983;
+  background-color: var(--accent-color);
   border-radius: 9999px;
   color: white;
   margin:0.4em;
