@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Niels Degrande's Blog</title>
+    <link>https://niels.degran.de/blog/</link>
+    <description>Insights on AI, coding agents, software engineering, and technology.</description>
+    <item>
+      <title>OopsOps incident agent</title>
+      <link>https://niels.degran.de/blog/oopsops-incident-agent.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/oopsops-incident-agent.html</guid>
+      <pubDate>Mon, 04 Aug 2025 00:00:00 +0000</pubDate>
+      <description>A vacation project that explores the OpenAI Agents SDK to build a realtime, multi-agent voice assistant that joins your incident calls and helps resolve issues.</description>
+    </item>
+    <item>
+      <title>Agent mesh</title>
+      <link>https://niels.degran.de/blog/agent-mesh.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/agent-mesh.html</guid>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <description>Exploring why enterprises may need an agent mesh and how Kafka fits.</description>
+    </item>
+    <item>
+      <title>Extend Darwin Gödel machines</title>
+      <link>https://niels.degran.de/blog/extend-darwin-godel-machines.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/extend-darwin-godel-machines.html</guid>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <description>Extend Darwin Gödel Machines for self-improving coding agents.</description>
+    </item>
+    <item>
+      <title>Agent builders</title>
+      <link>https://niels.degran.de/blog/agent-builders.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/agent-builders.html</guid>
+      <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
+      <description>A developer-friendly tour of no-code, low-code and pro-code agent builder platforms.</description>
+    </item>
+    <item>
+      <title>Computer use, GPA and legacy</title>
+      <link>https://niels.degran.de/blog/computer-use-gpa-legacy.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/computer-use-gpa-legacy.html</guid>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <description>How generative process automation and emerging &#x27;computer use&#x27; agents are reshaping legacy software automation.</description>
+    </item>
+    <item>
+      <title>Misbehaving LLMs</title>
+      <link>https://niels.degran.de/blog/misbehaving-llms.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/misbehaving-llms.html</guid>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <description>A lighthearted look at the odd ways large language models sometimes act up and what we can learn from them.</description>
+    </item>
+    <item>
+      <title>Reviewing generated code</title>
+      <link>https://niels.degran.de/blog/reviewing-generated-code.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/reviewing-generated-code.html</guid>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <description>Tips for staying sane while reviewing AI-generated pull requests.</description>
+    </item>
+    <item>
+      <title>Gemini Diffusion</title>
+      <link>https://niels.degran.de/blog/gemini-diffusion.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/gemini-diffusion.html</guid>
+      <pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate>
+      <description>First impressions after testing Gemini Diffusion.</description>
+    </item>
+    <item>
+      <title>Adapting to Generative Engineering</title>
+      <link>https://niels.degran.de/blog/adapt-geneng.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/adapt-geneng.html</guid>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <description>Adapting to Generative Engineering: A Developer&#x27;s Guide to Staying Relevant</description>
+    </item>
+    <item>
+      <title>Personal agents</title>
+      <link>https://niels.degran.de/blog/personal-agents.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/personal-agents.html</guid>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <description>A look at the coming wave of personal AI companions that can operate everything from your inbox to your oven.</description>
+    </item>
+    <item>
+      <title>MCPify</title>
+      <link>https://niels.degran.de/blog/mcpify.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/mcpify.html</guid>
+      <pubDate>Thu, 22 May 2025 00:00:00 +0000</pubDate>
+      <description>Turn Swagger / OpenAPI specs into ready-to-run TypeScript MCP servers with a single command.</description>
+    </item>
+    <item>
+      <title>Codex vs. Jules</title>
+      <link>https://niels.degran.de/blog/codex-vs-jules.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/codex-vs-jules.html</guid>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <description>A hands-on verdict on the cloud-based coding agents Codex and Jules.</description>
+    </item>
+    <item>
+      <title>Herding agents</title>
+      <link>https://niels.degran.de/blog/herding-agents.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/herding-agents.html</guid>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <description>Reflections on how developers are becoming herders of parallel AI agents.</description>
+    </item>
+    <item>
+      <title>make initialize_blog</title>
+      <link>https://niels.degran.de/blog/make-initialize-blog.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/make-initialize-blog.html</guid>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <description>Automating my writing flow with make initialize_blog</description>
+    </item>
+    <item>
+      <title>Robust RAG</title>
+      <link>https://niels.degran.de/blog/robust-rag.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/robust-rag.html</guid>
+      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
+      <description>How to build robust Retrieval Augmented Generation (RAG) systems, focusing on information extraction, retrieval precision/recall, and continuous evaluation.</description>
+    </item>
+    <item>
+      <title>Spectrum of coding agents</title>
+      <link>https://niels.degran.de/blog/spectrum-of-coding-agents.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/spectrum-of-coding-agents.html</guid>
+      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
+      <description>A tour across the spectrum of AI-assisted coding agents — from vibe-coding web builders to IDE copilots.</description>
+    </item>
+    <item>
+      <title>A(gent)ware</title>
+      <link>https://niels.degran.de/blog/agentware.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/agentware.html</guid>
+      <pubDate>Tue, 13 May 2025 00:00:00 +0000</pubDate>
+      <description>A minimal MCP server for agent registration and discovery</description>
+    </item>
+    <item>
+      <title>Agent management</title>
+      <link>https://niels.degran.de/blog/agent-management.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/agent-management.html</guid>
+      <pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate>
+      <description>How will agents be managed?</description>
+    </item>
+    <item>
+      <title>Coding agent dance-off</title>
+      <link>https://niels.degran.de/blog/coding-agent-dance-off.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/coding-agent-dance-off.html</guid>
+      <pubDate>Tue, 29 Apr 2025 00:00:00 +0000</pubDate>
+      <description>A comparison of different coding agents for a real-world task</description>
+    </item>
+    <item>
+      <title>Generative UI &amp; beyond</title>
+      <link>https://niels.degran.de/blog/ui-and-beyond.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/ui-and-beyond.html</guid>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate>
+      <description>Generative UI &amp; beyond</description>
+    </item>
+    <item>
+      <title>Language push down</title>
+      <link>https://niels.degran.de/blog/language-push-down.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/language-push-down.html</guid>
+      <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
+      <description>Language push down</description>
+    </item>
+    <item>
+      <title>Agent dark mode</title>
+      <link>https://niels.degran.de/blog/agent-dark-mode.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/agent-dark-mode.html</guid>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <description>Exploring GitHub Copilot&#x27;s experimental Agent Mode in VSCode Insiders</description>
+    </item>
+    <item>
+      <title>When to multi-agent?</title>
+      <link>https://niels.degran.de/blog/multi-agent.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/multi-agent.html</guid>
+      <pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate>
+      <description>When to multi-agent?</description>
+    </item>
+    <item>
+      <title>Levels of Workflow Automation</title>
+      <link>https://niels.degran.de/blog/workflows.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/workflows.html</guid>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
+      <description>Levels of Workflow Automation</description>
+    </item>
+    <item>
+      <title>Cycle</title>
+      <link>https://niels.degran.de/blog/cycle.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/cycle.html</guid>
+      <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
+      <description>Recycle workflows</description>
+    </item>
+    <item>
+      <title>First blog post</title>
+      <link>https://niels.degran.de/blog/first.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/first.html</guid>
+      <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
+      <description>First blog post</description>
+    </item>
+  </channel>
+</rss>

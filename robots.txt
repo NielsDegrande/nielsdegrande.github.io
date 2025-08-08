@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://niels.degran.de/sitemap.xml
