@@ -22,7 +22,8 @@ initialize_blog:
 	aider \
     --no-git \
     --yes-always \
-    --model o3 \
+    --model gpt-5 \
+    --reasoning-effort high \
     --file blog/$(BLOG_FILENAME).html \
     --message "Write a blog post about '$(ESCAPED_TOPIC)'. \
                 Populate the template. \
@@ -35,3 +36,17 @@ initialize_blog:
                 Make the HTML easy to read for a developer by starting a new line within the same <p> tag after you punctuate. \
                 Use h2 tags for subheadings. \
                 Here is the content to incorporate: $$(cat $(CONTENT_FILE))."
+
+## generate_meta: Generate sitemap.xml, robots.txt and blog RSS.
+.PHONY: generate_meta
+generate_meta:
+	python3 scripts/generate_meta.py
+
+## lint: Lint meta tags across pages.
+.PHONY: lint
+lint:
+	python3 scripts/lint_meta.py
+
+## build: Generate site artifacts and lint.
+.PHONY: build
+build: generate_meta lint

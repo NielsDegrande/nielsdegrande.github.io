@@ -15,6 +15,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Generate sitemap, robots.txt and RSS
+        run: make generate_meta
+
+      - name: Lint meta tags
+        run: make lint
+
       - name: Synchronize files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:

@@ -3,6 +3,27 @@
   padding-bottom: 16px;
 }
 
+.title-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.rss-icon {
+  color: var(--accent-color);
+  text-decoration: none;
+  line-height: 1;
+  transition: color 0.2s ease-in-out;
+}
+
+.rss-icon .fa-rss {
+  font-size: 1.6em;
+}
+
+.rss-icon:hover {
+  color: var(--text-color);
+}
+
 .blog-date {
   color: var(--text-color);
   opacity: 0.6;
