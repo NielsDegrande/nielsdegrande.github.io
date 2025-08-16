@@ -8,9 +8,9 @@
     <lastBuildDate>Mon, 04 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://niels.degran.de/blog/rss.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>OopsOps incident agent</title>
-      <link>https://niels.degran.de/blog/oopsops-incident-agent.html</link>
-      <guid isPermaLink="true">https://niels.degran.de/blog/oopsops-incident-agent.html</guid>
+      <title>Incident agent</title>
+      <link>https://niels.degran.de/blog/incident-agent.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/incident-agent.html</guid>
       <pubDate>Mon, 04 Aug 2025 00:00:00 +0000</pubDate>
       <description>A vacation project that explores the OpenAI Agents SDK to build a realtime, multi-agent voice assistant that joins your incident calls and helps resolve issues.</description>
     </item>

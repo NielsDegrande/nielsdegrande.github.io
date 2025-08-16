@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://niels.degran.de/blog/coding-agent-dance-off.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-08-09</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/computer-use-gpa-legacy.html</loc>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://niels.degran.de/blog/extend-darwin-godel-machines.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-08-09</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/first.html</loc>
@@ -57,8 +57,12 @@
     <lastmod>2025-08-08</lastmod>
   </url>
   <url>
+    <loc>https://niels.degran.de/blog/incident-agent.html</loc>
+    <lastmod>2025-08-16</lastmod>
+  </url>
+  <url>
     <loc>https://niels.degran.de/blog/</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-08-16</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/language-push-down.html</loc>
@@ -66,7 +70,7 @@
   </url>
   <url>
     <loc>https://niels.degran.de/blog/make-initialize-blog.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-08-09</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/mcpify.html</loc>
@@ -81,12 +85,8 @@
     <lastmod>2025-08-08</lastmod>
   </url>
   <url>
-    <loc>https://niels.degran.de/blog/oopsops-incident-agent.html</loc>
-    <lastmod>2025-08-08</lastmod>
-  </url>
-  <url>
     <loc>https://niels.degran.de/blog/personal-agents.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-08-09</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/reviewing-generated-code.html</loc>
@@ -114,6 +114,6 @@
   </url>
   <url>
     <loc>https://niels.degran.de/</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-08-09</lastmod>
   </url>
 </urlset>

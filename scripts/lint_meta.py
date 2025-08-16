@@ -293,9 +293,12 @@ def main() -> int:
 
     if all_errors:
         for path, errors in sorted(all_errors.items()):
-            (Path(path).resolve().relative_to(Path(ROOT_DIR).resolve()).as_posix())
-            for _message in errors:
-                pass
+            relative_path = (
+                Path(path).resolve().relative_to(Path(ROOT_DIR).resolve()).as_posix()
+            )
+            print(f"{relative_path}:")
+            for message in errors:
+                print(f"  - {message}")
         return 1
 
     return 0
