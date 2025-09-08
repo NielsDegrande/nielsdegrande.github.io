@@ -25,20 +25,3 @@ jobs:
 
       - name: Lint meta tags
         run: make lint
-
-      - name: Synchronize files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          server-dir: /domains/degran.de/public_html/niels/
-          dry-run: false
-          exclude: |
-            .editorconfig
-            .gitignore
-            .git/**
-            .github/**
-            assets/niels-degrande-cv.pdf
-            README.md
