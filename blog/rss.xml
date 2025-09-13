@@ -5,8 +5,15 @@
     <link>https://niels.degran.de/blog/</link>
     <description>Insights on AI, coding agents, software engineering, and technology.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 04 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://niels.degran.de/blog/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rehosting</title>
+      <link>https://niels.degran.de/blog/rehosting.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/rehosting.html</guid>
+      <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
+      <description>How I rehosted two simple websites using GitHub Pages, Cloudflare (DNS, Pages, Email forwarding), and SMTP2GO to cut costs while keeping the same features.</description>
+    </item>
     <item>
       <title>Incident agent</title>
       <link>https://niels.degran.de/blog/incident-agent.html</link>

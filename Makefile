@@ -17,7 +17,7 @@ initialize_blog:
     --yes-always \
     --model gpt-4.1 \
     --file blog/index.html \
-    --message "Add a blog entry to blog/index.html. Today's date is $(shell date +%Y-%m-%d). Topic is '$(ESCAPED_TOPIC)'. Use sentence case."
+    --message "Add a blog entry to blog/index.html at the top position. Today's date is $(shell date +%Y-%m-%d). Topic is '$(ESCAPED_TOPIC)'. Use sentence case."
 	cp blog/template.html blog/$(BLOG_FILENAME).html
 	aider \
     --no-git \
@@ -28,6 +28,7 @@ initialize_blog:
     --message "Write a blog post about '$(ESCAPED_TOPIC)'. \
                 Populate the template. \
                 Stick really close to the given content, but correct all spelling and grammar. \
+                Populate references to images and urls with html syntax. \
                 Look at other posts in the \`blog\` folder to get the style right. Read at least 3 posts before writing. \
                 Aim for a tone that is engaging and conversational. An easy read for a skilled developer. \
                 Ensure titles are in sentence case, for example: First impressions. \
@@ -47,6 +48,11 @@ generate_meta:
 lint:
 	python3 scripts/lint_meta.py
 
+## add_cf_beacon: Add Cloudflare beacon to all pages.
+.PHONY: add_cf_beacon
+add_cf_beacon:
+	python3 scripts/add_cf_beacon.py
+
 ## build: Generate site artifacts and lint.
 .PHONY: build
-build: generate_meta lint
+build: generate_meta lint add_cf_beacon

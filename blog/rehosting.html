@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Rehosting</title>
+    <meta name="description" content="How I rehosted two simple websites using GitHub Pages, Cloudflare (DNS, Pages, Email forwarding), and SMTP2GO to cut costs while keeping the same features." />
+    <meta name="author" content="Niels Degrande">
+    <meta name="keywords" content="rehosting, GitHub Pages, Cloudflare, DNS, email forwarding, SMTP2GO, Cloudflare Pages, Cloudflare Analytics, static site">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://niels.degran.de/blog/rehosting.html">
+    <meta property="og:title" content="Rehosting - Niels Degrande's Blog">
+    <meta property="og:description" content="How I rehosted two simple websites using GitHub Pages, Cloudflare (DNS, Pages, Email forwarding), and SMTP2GO to cut costs while keeping the same features.">
+    <meta property="og:image" content="https://niels.degran.de/assets/niels.jpg">
+    <meta property="article:published_time" content="2025-09-12">
+    <meta property="article:author" content="Niels Degrande">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://niels.degran.de/blog/rehosting.html">
+    <meta property="twitter:title" content="Rehosting - Niels Degrande's Blog">
+    <meta property="twitter:description" content="How I rehosted two simple websites using GitHub Pages, Cloudflare (DNS, Pages, Email forwarding), and SMTP2GO to cut costs while keeping the same features.">
+    <meta property="twitter:image" content="https://niels.degran.de/assets/niels.jpg">
+
+    <!-- Additional SEO tags -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://niels.degran.de/blog/rehosting.html">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "48a7ad56a51a4ef5ad845059521443a9"}'></script>
+</head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Rehosting</span>
+      </div>
+      <h1>Rehosting</h1>
+      <div class="blog-date">Published on September 12, 2025</div>
+      <div class="blog-text">
+        <h2>Introduction</h2>
+        <p>
+          It's been many years since I hosted my first websites.
+          Originally for my student association, then to give my parents' company an online presence.
+          When it was time for my personal website (this one), I opted for the same hosting provider.
+        </p>
+
+        <p>
+          Meanwhile, time has moved on and much has changed.
+          Not only has the technology evolved, the bill to host two very simple websites has ballooned.
+          There's no Moore's law for captive hosting customers.
+        </p>
+
+        <p>
+          So I set out on a journey to remove hosting costs altogether: keeping feature parity while only paying for the domain name.
+          It got a bit more involved, hence this blog post serves as documentation for my future self.
+        </p>
+
+        <p>The ingredients to this recipe will involve:</p>
+        <ul>
+          <li>A pinch of vibe coding</li>
+          <li>GitHub Pages</li>
+          <li>Cloudflare DNS</li>
+          <li>Cloudflare Email Forwarding</li>
+          <li>SMTP2GO</li>
+          <li>Cloudflare Pages</li>
+          <li>Cloudflare Analytics</li>
+        </ul>
+
+        <h2>Vibe coding</h2>
+        <p>
+          While this blog has always been static pages, my parents' company website was a WordPress.
+          Migrating that, for example the database, would be more complex and also highly unnecessary: it's a dead-simple page with some company information.
+        </p>
+
+        <p>
+          Taking a screenshot of the original (Firefox allows full-page screenshots), then asking Claude to reproduce it as a static HTML, CSS, and JS bundle gave a very good first version.
+          Some prompting, reviewing and editing later, and we had a modern and clean design, the right information, and quality code.
+        </p>
+
+        <h2>GitHub Pages</h2>
+        <p>
+          Next was to deploy both websites with GitHub Pages.
+          This is equally simple: go to Settings on your GitHub repository, point to the branch you want to deploy, and hit "Save".
+        </p>
+
+        <p><img class="blog-img spaced" src="../assets/blog/rehosting/gh_pages.png" alt="GitHub Pages settings: publishing from the main branch" /></p>
+
+        <p>
+          Now both websites are live; however, they are under the <code>nielsdegrande.github.io</code> hostname.
+        </p>
+
+        <p>
+          Note that more complex deployment scenarios are possible.
+          For example, <a href="https://github.com/NielsDegrande/cv/blob/main/.github/workflows/cd.yaml" target="_blank" rel="noopener noreferrer">here</a> I compile and then publish a LaTeX document.
+        </p>
+
+        <h2>Cloudflare DNS</h2>
+        <p>
+          While I could have altered the DNS records with my current domain name (and hosting) provider, I was committed to abandoning them as much as I could.
+        </p>
+
+        <p>
+          I onboarded my domain on Cloudflare, which then provides instructions on how to point the nameservers for your domain to Cloudflare at the domain name provider, as well as (automatically) importing the existing DNS records.
+        </p>
+
+        <p><img class="blog-img spaced" src="../assets/blog/rehosting/cf_dns_setup.png" alt="Cloudflare DNS onboarding and nameserver setup" /></p>
+
+        <p>
+          Now you can go ahead and add your custom domain to your repositories with GitHub Pages.
+        </p>
+        <p><img class="blog-img spaced" src="../assets/blog/rehosting/gh_custom_domain.png" alt="Configuring a custom domain for a GitHub Pages repository" /></p>
+
+        <p>
+          It is important to verify your custom domain—<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages" target="_blank" rel="noopener noreferrer">here's how and why</a>, which requires adding a TXT DNS record.
+        </p>
+
+        <p>
+          To ensure traffic reaches GitHub, you need to add A/AAAA records pointing to GitHub's IP addresses, as explained <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener noreferrer">in the docs</a>.
+          As I host my personal website on a subdomain, I had a slightly different setup.
+        </p>
+
+        <p>
+          First, I used a CNAME record to send traffic to <code>nielsdegrande.github.io</code>, where the personal blog resides.
+        </p>
+        <p><img class="blog-img spaced" src="../assets/blog/rehosting/cf_dns_records.png" alt="Cloudflare DNS records: CNAME pointing to nielsdegrande.github.io" /></p>
+
+        <p>
+          For the apex domain, I used a placeholder A record pointing to 192.0.2.1 (used as a blackhole IP), which is proxied by Cloudflare.
+          This allows Cloudflare to intercept requests and apply redirect rules.
+        </p>
+        <p><img class="blog-img spaced" src="../assets/blog/rehosting/cf_black_hole.png" alt="Cloudflare placeholder A record (black hole)" /></p>
+        <p>
+          Here we configure the redirect rule to forward all traffic to the subdomain while preserving the path.
+        </p>
+        <p><img class="blog-img spaced" src="../assets/blog/rehosting/cf_redirect_rule.png" alt="Cloudflare redirect rule to the subdomain" /></p>
+
+        <h2>Cloudflare email forwarding</h2>
+        <p>
+          Originally, my hosting package came with support for unlimited mailboxes.
+          Meanwhile their offering had changed, and this came at a surcharge.
+          However, for old customers it continued to work, but I could not edit or remove these mailboxes anymore.
+        </p>
+
+        <p>
+          I discovered an amazing Cloudflare feature: by adding MX records pointing to Cloudflare's mail servers, you can catch-all emails on your domain and forward them to a chosen email address.
+          For example, any combination of <code>.*@domainname.tld</code> will end up at your chosen address.
+        </p>
+
+        <p>
+          You can set this up under Email &rarr; Email Routing &rarr; Routing rules.
+        </p>
+        <p><img class="blog-img spaced" src="../assets/blog/rehosting/cf_email_forwarding.png" alt="Cloudflare Email Routing: catch-all forwarding rule" /></p>
+
+        <h2>SMTP2GO</h2>
+        <p>
+          Cloudflare Email Routing does not support outbound sending. For example, you cannot send or respond from <code>hello@domainname.tld</code>.
+          Hence, we either need to deploy our own mail server or use a service with a good free tier.
+          I did some research and felt <a href="https://www.smtp2go.com/" target="_blank" rel="noopener noreferrer">SMTP2GO</a> had a good offering.
+        </p>
+
+        <p>
+          The onboarding process is rather seamless.
+          Instructions are <a href="https://support.smtp2go.com/hc/en-gb/articles/12747932085145-Quick-Start-Guide" target="_blank" rel="noopener noreferrer">here</a>.
+          It also involves ensuring correct SPF, DKIM, and DMARC records for domain reputation.
+          <a href="https://easydmarc.com/tools/dmarc-record-generator" target="_blank" rel="noopener noreferrer">This tool</a> helped with the DMARC record.
+          <a href="https://www.mail-tester.com/" target="_blank" rel="noopener noreferrer">Here</a> you can test if you did everything correctly.
+        <p><img class="blog-img spaced" src="../assets/blog/rehosting/test_email.png" alt="E-mail test results" /></p>
+        </p>
+
+        <p>
+          After that, you can create a username and password, and use one of the many guides made available by SMTP2GO to set things up.
+          For example, here's how to add your email address to Gmail through SMTP2GO: <a href="https://www.smtp2go.com/setupguide/gmail/" target="_blank" rel="noopener noreferrer">Gmail setup guide</a>.
+        </p>
+
+        <h2>Cloudflare Pages</h2>
+        <p>
+          One limitation of the Cloudflare free tier is that it only issues TLS/SSL certificates up to the first level of subdomain.
+          As I host my personal blog on a subdomain, and I also want to direct <code>www</code> traffic, I had an issue with <code>https://www.niels.degran.de</code>.
+        </p>
+
+        <p>
+          The way I resolved it was by adding a very simple Cloudflare Pages website on the domain <code>www.niels.degran.de</code>, which redirects to <code>niels.degran.de</code>.
+          The project lives <a href="https://github.com/NielsDegrande/www.niels" target="_blank" rel="noopener noreferrer">here</a>.
+          Cloudflare does issue certificates for Cloudflare Pages.
+        </p>
+
+        <h2>Cloudflare Analytics</h2>
+        <p>
+          Before, I used Google Analytics for my parents' company website, but I wanted to abandon it as well.
+          Cloudflare Web Analytics lets you include a small JS snippet on every page for a cookie-free approach, which I found important.
+        </p>
+
+        <p><img class="blog-img spaced" src="../assets/blog/rehosting/cf_web_analytics.png" alt="Cloudflare Web Analytics dashboard" /></p>
+
+        <h2>Conclusion</h2>
+        <p>
+          The total cost is now just the domain registration fee.
+          As far as I can tell, there is complete feature parity with the previous hosting provider.
+          However, the free tiers come with some limitations: bandwidth, number of e-mails, workarounds for SSL certificates, etc.
+          None of these are deal-breakers for my use case, but they might be for you.
+        </p>
+      </div>
+    </div>
+    <script src="../theme.js"></script>
+  </body>
+</html>

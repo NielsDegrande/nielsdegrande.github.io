@@ -1,119 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://niels.degran.de/404.html</loc>
+    <lastmod>2025-09-08</lastmod>
+  </url>
+  <url>
     <loc>https://niels.degran.de/blog/adapt-geneng.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/agent-builders.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/agent-dark-mode.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/agent-management.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/agent-mesh.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/agentware.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/codex-vs-jules.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/coding-agent-dance-off.html</loc>
-    <lastmod>2025-08-09</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/computer-use-gpa-legacy.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/cycle.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/extend-darwin-godel-machines.html</loc>
-    <lastmod>2025-08-09</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/first.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/gemini-diffusion.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/herding-agents.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/incident-agent.html</loc>
-    <lastmod>2025-08-16</lastmod>
+    <lastmod>2025-09-09</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/</loc>
-    <lastmod>2025-08-16</lastmod>
+    <lastmod>2025-09-12</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/language-push-down.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/make-initialize-blog.html</loc>
-    <lastmod>2025-08-09</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/mcpify.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/misbehaving-llms.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/multi-agent.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/personal-agents.html</loc>
-    <lastmod>2025-08-09</lastmod>
+    <lastmod>2025-09-08</lastmod>
+  </url>
+  <url>
+    <loc>https://niels.degran.de/blog/rehosting.html</loc>
+    <lastmod>2025-09-13</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/reviewing-generated-code.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/robust-rag.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/spectrum-of-coding-agents.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/template.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/ui-and-beyond.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/blog/workflows.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
   <url>
     <loc>https://niels.degran.de/</loc>
-    <lastmod>2025-08-09</lastmod>
+    <lastmod>2025-09-08</lastmod>
   </url>
 </urlset>
