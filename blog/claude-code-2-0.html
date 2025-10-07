@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Claude Code 2.0: First impressions</title>
+    <meta name="description" content="I revisit my coding agent benchmark and put Claude Code 2.0 with Sonnet 4.5 to the test, migrating a UI from MUI to shadcn/ui with a human in the loop." />
+    <meta name="author" content="Niels Degrande">
+    <meta name="keywords" content="AI, artificial intelligence, software engineering, technology, Claude Code, coding agents, Tailwind, shadcn/ui, MUI, Playwright">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://niels.degran.de/blog/claude-code-2.0.html">
+    <meta property="og:title" content="Claude Code 2.0: First impressions - Niels Degrande's Blog">
+    <meta property="og:description" content="I revisit my coding agent benchmark and put Claude Code 2.0 with Sonnet 4.5 to the test, migrating a UI from MUI to shadcn/ui with a human in the loop.">
+    <meta property="og:image" content="https://niels.degran.de/assets/niels.jpg">
+    <meta property="article:published_time" content="2025-10-07">
+    <meta property="article:author" content="Niels Degrande">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://niels.degran.de/blog/claude-code-2.0.html">
+    <meta property="twitter:title" content="Claude Code 2.0: First impressions - Niels Degrande's Blog">
+    <meta property="twitter:description" content="I revisit my coding agent benchmark and put Claude Code 2.0 with Sonnet 4.5 to the test, migrating a UI from MUI to shadcn/ui with a human in the loop.">
+    <meta property="twitter:image" content="https://niels.degran.de/assets/niels.jpg">
+
+    <!-- Additional SEO tags -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://niels.degran.de/blog/claude-code-2.0.html">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "48a7ad56a51a4ef5ad845059521443a9"}'></script>
+</head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Clauding</span>
+      </div>
+      <h1>Claude Code 2.0 review</h1>
+      <div class="blog-date">Published on October 7, 2025</div>
+      <div class="blog-text">
+        <h2>Introduction</h2>
+        <p>
+          In April this year I published <a href="https://niels.degran.de/blog/coding-agent-dance-off.html" class="link-green" target="_blank" rel="noopener noreferrer">Coding agent dance-off</a>.
+          There, I compared several coding agents in search of an agent that could migrate the UI template I use for my data science product builds from <a href="https://mui.com/" class="link-green" target="_blank" rel="noopener noreferrer">MUI</a> to <a href="https://ui.shadcn.com/" class="link-green" target="_blank" rel="noopener noreferrer">shadcn/ui</a>.
+          At the time, it was mixed results, with Aider taking the lead with an almost-there result.
+          I did note, though, that I had not been able to test Claude Code yet due to not having a subscription, and I was not able to use the API key at the time.
+          That changed a couple of months ago, but I never gave it a try since.
+        </p>
+        <p>
+          Recently, Claude Code 2.0 was released in conjunction with Sonnet 4.5.
+          I thought it was the ideal time to give it another go.
+        </p>
+        <h2>Approach and findings</h2>
+        <p>
+          Spoiler alert: Claude Code, with a little help, succeeded.
+          I started by writing a rather involved prompt to help Claude Code on its way.
+          For example, I outlined that it should first use <a href="https://playwright.dev/" class="link-green" target="_blank" rel="noopener noreferrer">Playwright</a> over <a href="https://modelcontextprotocol.io/" class="link-green" target="_blank" rel="noopener noreferrer">MCP</a> to take screenshots of all pages, so that once it completed the refactoring, it could do the same and validate that basic functionality and layout primitives had not changed too much.
+          It did that well.
+        </p>
+        <p>
+          Claude Code laid out a plan and did a great job there.
+          It identified nearly all places where changes were required, as well as which dependencies to replace.
+          It implemented the changes with complete autonomy.
+          Then it went ahead and took a few more screenshots, declaring victory.
+        </p>
+        <p>
+          However, when I looked at the screenshots and started the UI, I could see that no CSS was applied at all.
+          It was not the first time I noticed this when bootstrapping a new frontend codebase.
+          It relates to Tailwind CSS 4, as described <a href="https://tailwindcss.com/docs/upgrade-guide" class="link-green" target="_blank" rel="noopener noreferrer">here</a>.
+          It probably relates to the knowledge cutoff predating wide adoption.
+          Here one can either go for manual intervention, or prompt the agent to downgrade to the highest Tailwind 3 version.
+          Having "fixed" the above, I followed up with a few prompts to, for example, center the logo as it was before, and to replace <a href="https://fkhadra.github.io/react-toastify/introduction" class="link-green" target="_blank" rel="noopener noreferrer">react-toastify</a> with <a href="https://sonner.emilkowal.ski" class="link-green" target="_blank" rel="noopener noreferrer">sonner</a>.
+        </p>
+        <p>
+          Then I pushed a few rounds of self-review, running and fixing linting, unit tests, and Playwright tests.
+          With a human in the loop, it did these changes well.
+        </p>
+        <h2>Conclusions</h2>
+        <p>
+          Claude Code did a great job executing on the changes. That said, I almost expected the step change to be more pronounced.
+        </p>
+        <p>
+          One disappointment is that even though there is a proper <code>CLAUDE.md</code>, if I do not spell out to run basic quality control, it does not do it on its own.
+          Even when I specify that it should take a screenshot and inspect the code changes visually, it takes the screenshot, but it does not notice that things are very wrong.
+          I would have assumed this junior engineer expectation would be internalized in the weights and/or context engineering by now.
+          The autonomy claims are slightly overstated; for real-world purposes, it still needs a driver (or better agent configurations).
+        </p>
+        <p>
+          In the earlier blog post, I described that I expected it would primarily require foundation model changes to finally succeed with this challenge.
+          Because I tested Claude Code 2.0 in conjunction with Sonnet 4.5, it is hard to attribute what contributed the most.
+          I am not invested enough to replay the challenge on both in isolation.
+          However, if I had to guess, I would argue the major contributors were the FM and the human in the loop:Sonnet 4.5 being a significantly better LLM for coding than what was available back in April (Sonnet 3.7),
+          and myself also being more versed in how to squeeze the most out of it, anticipating failure modes, being a more opinionated prompter, etc.
+        </p>
+      </div>
+    </div>
+    <script src="../theme.js"></script>
+  </body>
+</html>
