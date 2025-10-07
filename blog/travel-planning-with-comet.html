@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Travel planning with Comet</title>
+    <meta name="description" content="A hands-on look at Perplexity Comet for travel planning: benchmarking, speed, accuracy, and real-world hotel booking." />
+    <meta name="author" content="Niels Degrande">
+    <meta name="keywords" content="AI, artificial intelligence, software engineering, technology">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://niels.degran.de/blog/travel-planning-with-comet.html">
+    <meta property="og:title" content="Travel planning with Comet - Niels Degrande's Blog">
+    <meta property="og:description" content="A hands-on look at Perplexity Comet for travel planning: benchmarking, speed, accuracy, and real-world hotel booking.">
+    <meta property="og:image" content="https://niels.degran.de/assets/niels.jpg">
+    <meta property="article:published_time" content="2025-10-07">
+    <meta property="article:author" content="Niels Degrande">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://niels.degran.de/blog/travel-planning-with-comet.html">
+    <meta property="twitter:title" content="Travel planning with Comet - Niels Degrande's Blog">
+    <meta property="twitter:description" content="A hands-on look at Perplexity Comet for travel planning: benchmarking, speed, accuracy, and real-world hotel booking.">
+    <meta property="twitter:image" content="https://niels.degran.de/assets/niels.jpg">
+
+    <!-- Additional SEO tags -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://niels.degran.de/blog/travel-planning-with-comet.html">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "48a7ad56a51a4ef5ad845059521443a9"}'></script>
+</head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Reviewing</span>
+      </div>
+      <h1>Travel planning with Comet</h1>
+      <div class="blog-date">Published on October 7, 2025</div>
+      <div class="blog-text">
+        <p>
+          No, this blog post is not about interstellar travel.
+          Earlier this week, we all got access to <a href="https://www.perplexity.ai/comet" rel="noopener noreferrer" target="_blank">Perplexity Comet</a>.
+          A few weeks before, I finally got off the waitlist for <a href="https://strawberrybrowser.com/" rel="noopener noreferrer" target="_blank">Strawberry</a> and already had a first taste of agentic browsers.
+          Therefore, I was very excited to try out Comet too.
+        </p>
+
+        <h2>Benchmarking</h2>
+        <p>
+          The benchmark exercise I have used for agentic browsers so far (Operator, Strawberry, now Comet) is to put all ingredients for a lasagna in the shopping basket of my local supermarket chain.
+        </p>
+        <p>
+          Anecdotally, Comet and I started off on the wrong foot.
+          After some onboarding screens where I chose not to import bookmarks or share my data, I saw a button labeled "Try assistant."
+          Expecting to see a chat box, I was confused to only see example prompts.
+          I escaped and looked around, then clicked "Try assistant" again.
+          Still no luck.
+          Once more I escaped, stared at the screen, then noticed the "Assistant" button next to the URL bar.
+          I have no idea who thinks it is good UI/UX to have a button "Try assistant" that does not take you to the assistant, nor point you to where to find the assistant.
+          Perplexity, do better!
+        </p>
+        <img class="blog-img spaced" src="../assets/blog/travel-planning-with-comet/try-assistant.png" alt="'Try assistant' without opening the assistant">
+        <p>
+          Once I got past the initial confusion, I had two observations:
+        </p>
+        <ul>
+          <li>The speed is incredible.</li>
+          <li>It did the task perfectly.
+While others get stuck on cookie banners, Comet had no issues whatsoever.</li>
+        </ul>
+        <p>
+          Given that I do not pay, I was impressed that I did not feel like I had to sacrifice either speed or accuracy.
+        </p>
+
+        <h2>Travel planning</h2>
+        <p>
+          I did not switch to Comet for my primary browser.
+          I am quite invested in being privacy-first, using LibreWolf as my daily driver.
+          As I am about to embark on a big trip, I have to book 10+ hotels.
+          Typically, this is a very time-consuming and somewhat dreadful task.
+          You find yourself clicking through Booking.com, copying and double-checking the dates, repeating the same filters over and over again, etc.
+          Dreading this task, I figured: let's give Comet a try.
+        </p>
+        <p>
+          Having researched my trip with ChatGPT, I asked it to summarize a nice table with all the facts.
+          I copied and pasted the table into Comet's Assistant and asked it to open a browser tab for each hotel location and set the filters (budget, minimum rating, etc.).
+        </p>
+        <p>Observations:</p>
+        <ul>
+          <li>It parallelized all locations, and I could nicely follow the progress in the assistant window.</li>
+          <li>It took a bit of time, and potentially reasoned more than required, but got the job done with about 90% accuracy.</li>
+          <li>It did not open the browser tabs at first, rather showed "mini-tabs" in the chat window.
+However, when I asked it to open the tabs, it did so nicely, showing proper bidirectional integration between the browser and the browser agent.</li>
+        </ul>
+        <p>
+          Examples of where it was not accurate: for one hotel location, it had the dates right but repeated the location from another row in the table.
+          Comet did a great job of ordering the browser tabs by date, even though the ChatGPT output was prioritized by which locations to book first given likelihood to sell out.
+          I liked that Comet reordered the tabs, as it allowed me to quickly validate if I had any gaps.
+          The wrong location therefore stood out, as it was jumping countries too soon.
+          If not for that, I might have realized the mistake when it was too late.
+          Good thing I did not give it my credit card just yet!
+        </p>
+        <p>
+          The other shortcoming (one could argue it was only laziness) was that, upon Booking.com returning no results for a national park with no hotels inside, it did not try to search nearby villages just outside the park.
+        </p>
+
+        <h2>Conclusions</h2>
+        <p>
+          For a tool I do not pay for, I am incredibly impressed.
+          I can already see how this will save me so much time with form filling and booking tasks.
+          While the booking for many locations is quite an expensive usage already, I did not hit any limits or run out of tokens yet.
+        </p>
+        <p>
+          At the same time, not paying for it makes me a little worried too.
+          If you do not pay for a product, you are the product.
+          I am quite OK giving Perplexity (and whoever buys or uses their data) insight into my travel habits, but what else am I giving up in the free plan?
+          Is my data "safer" if I would pay for it?
+          What if I would have it fill out my visa application forms?
+          A lot of questions, and few precise answers in the FAQ.
+        </p>
+        <img class="blog-img spaced" src="../assets/blog/travel-planning-with-comet/pricing.png" alt="Perplexity Comet pricing and privacy">
+        <p>
+          Next on my list was booking several car rentals.
+          I did not think twice about using Comet.
+          I am hooked, there is no way back to doing things the old way.
+          Can I imagine paying for this?
+          Yes, a couple of euros a month, easy.
+        </p>
+      </div>
+    </div>
+    <script src="../theme.js"></script>
+  </body>
+</html>

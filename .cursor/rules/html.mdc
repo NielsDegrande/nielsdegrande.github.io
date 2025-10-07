@@ -14,4 +14,7 @@ When formatting HTML content, especially for blog posts, follow this specific st
   Second sentence continues on a new line.
   Each sentence gets its own line with proper indentation.
 </p>
+<p>
+  ...
+</p>
 ```
