@@ -5,8 +5,22 @@
     <link>https://niels.degran.de/blog/</link>
     <description>Insights on AI, coding agents, software engineering, and technology.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 12 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://niels.degran.de/blog/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Claude Code 2.0: First impressions</title>
+      <link>https://niels.degran.de/blog/claude-code-2-0.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/claude-code-2-0.html</guid>
+      <pubDate>Tue, 07 Oct 2025 00:00:00 +0000</pubDate>
+      <description>I revisit my coding agent benchmark and put Claude Code 2.0 with Sonnet 4.5 to the test, migrating a UI from MUI to shadcn/ui with a human in the loop.</description>
+    </item>
+    <item>
+      <title>Travel planning with Comet</title>
+      <link>https://niels.degran.de/blog/travel-planning-with-comet.html</link>
+      <guid isPermaLink="true">https://niels.degran.de/blog/travel-planning-with-comet.html</guid>
+      <pubDate>Tue, 07 Oct 2025 00:00:00 +0000</pubDate>
+      <description>A hands-on look at Perplexity Comet for travel planning: benchmarking, speed, accuracy, and real-world hotel booking.</description>
+    </item>
     <item>
       <title>Rehosting</title>
       <link>https://niels.degran.de/blog/rehosting.html</link>
