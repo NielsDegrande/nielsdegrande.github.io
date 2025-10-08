@@ -81,7 +81,7 @@
           There, I compared several coding agents in search of an agent that could migrate the UI template I use for my data science product builds from <a href="https://mui.com/" class="link-green" target="_blank" rel="noopener noreferrer">MUI</a> to <a href="https://ui.shadcn.com/" class="link-green" target="_blank" rel="noopener noreferrer">shadcn/ui</a>.
           At the time, it was mixed results, with Aider taking the lead with an almost-there result.
           I did note, though, that I had not been able to test Claude Code yet due to not having a subscription, and I was not able to use the API key at the time.
-          That changed a couple of months ago, but I never gave it a try since.
+          That changed a couple of months ago, but I never gave it a try since then.
         </p>
         <p>
           Recently, Claude Code 2.0 was released in conjunction with Sonnet 4.5.
@@ -102,11 +102,12 @@
         </p>
         <p>
           However, when I looked at the screenshots and started the UI, I could see that no CSS was applied at all.
-          It was not the first time I noticed this when bootstrapping a new frontend codebase.
-          It relates to Tailwind CSS 4, as described <a href="https://tailwindcss.com/docs/upgrade-guide" class="link-green" target="_blank" rel="noopener noreferrer">here</a>.
-          It probably relates to the knowledge cutoff predating wide adoption.
-          Here one can either go for manual intervention, or prompt the agent to downgrade to the highest Tailwind 3 version.
-          Having "fixed" the above, I followed up with a few prompts to, for example, center the logo as it was before, and to replace <a href="https://fkhadra.github.io/react-toastify/introduction" class="link-green" target="_blank" rel="noopener noreferrer">react-toastify</a> with <a href="https://sonner.emilkowal.ski" class="link-green" target="_blank" rel="noopener noreferrer">sonner</a>.
+          It was not the first time I had noticed this when bootstrapping a new frontend codebase.
+          It relates to the release of Tailwind CSS 4, as described <a href="https://tailwindcss.com/docs/upgrade-guide" class="link-green" target="_blank" rel="noopener noreferrer">here</a>.
+          This could be explained by the knowledge cutoff predating wide adoption.
+          Anthropic states a "reliable knowledge cutoff" of January 2025, which coincides with the Tailwind 4 release.
+          Here one can either go for manual intervention or prompt the agent to downgrade to the highest Tailwind 3 version.
+          Having "fixed" the above, I followed up with a few prompts to, for example, center the logo as it was before and to replace <a href="https://fkhadra.github.io/react-toastify/introduction" class="link-green" target="_blank" rel="noopener noreferrer">react-toastify</a> with <a href="https://sonner.emilkowal.ski" class="link-green" target="_blank" rel="noopener noreferrer">sonner</a>.
         </p>
         <p>
           Then I pushed a few rounds of self-review, running and fixing linting, unit tests, and Playwright tests.
@@ -114,11 +115,11 @@
         </p>
         <h2>Conclusions</h2>
         <p>
-          Claude Code did a great job executing on the changes. That said, I almost expected the step change to be more pronounced.
+          Claude Code did a great job executing the changes. That said, I almost expected the step change to be more pronounced.
         </p>
         <p>
           One disappointment is that even though there is a proper <code>CLAUDE.md</code>, if I do not spell out to run basic quality control, it does not do it on its own.
-          Even when I specify that it should take a screenshot and inspect the code changes visually, it takes the screenshot, but it does not notice that things are very wrong.
+          Even when I specify that it should take a screenshot and inspect the code changes visually, it takes the screenshot but does not notice that things are very wrong.
           I would have assumed this junior engineer expectation would be internalized in the weights and/or context engineering by now.
           The autonomy claims are slightly overstated; for real-world purposes, it still needs a driver (or better agent configurations).
         </p>
@@ -126,8 +127,8 @@
           In the earlier blog post, I described that I expected it would primarily require foundation model changes to finally succeed with this challenge.
           Because I tested Claude Code 2.0 in conjunction with Sonnet 4.5, it is hard to attribute what contributed the most.
           I am not invested enough to replay the challenge on both in isolation.
-          However, if I had to guess, I would argue the major contributors were the FM and the human in the loop:Sonnet 4.5 being a significantly better LLM for coding than what was available back in April (Sonnet 3.7),
-          and myself also being more versed in how to squeeze the most out of it, anticipating failure modes, being a more opinionated prompter, etc.
+          However, if I had to guess, I would argue the major contributors were the FM and the human in the loop: Sonnet 4.5 being a significantly better LLM for coding than what was available back in April (Sonnet 3.7),
+          and myself also being more versed in how to squeeze the most out of it, anticipating failure modes, and being a more opinionated prompter, etc.
         </p>
       </div>
     </div>
