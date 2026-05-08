@@ -1,10 +1,8 @@
----
-globs: *.html
----
-
 # HTML
 
-## Paragraph Formatting
+Applies to: `*.html`
+
+## Paragraph formatting
 
 When formatting HTML content, especially for blog posts, follow this specific structure for paragraph tags:
 

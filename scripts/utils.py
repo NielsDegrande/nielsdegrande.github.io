@@ -9,7 +9,7 @@ ROOT_DIR: str = str(Path(__file__).resolve().parent.parent)
 SKIP_DIRS: set[str] = {
     ".git",
     ".github",
-    ".cursor",
+    ".agents",
     "__pycache__",
     "scripts",
     "assets",
