@@ -116,24 +116,6 @@ a {
   font-weight: normal;
 }
 
-.button-rounded {
-  background-color: var(--accent-color);
-  border-radius: 9999px;
-  color: white;
-  margin:0.4em;
-  padding: 0.75em 1.5em;
-}
-
-.button-rounded:hover {
-  background-color: var(--text-color);
-  color: var(--background-color);
-}
-
-.button-container {
-  text-align: center;
-  padding-top: 4vh;
-}
-
 /* Dark mode toggle button. */
 .theme-toggle {
   align-items: center;
