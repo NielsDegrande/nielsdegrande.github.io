@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>My dev flow</title>
+    <meta name="description" content="Snapshot of my coding-agent flow: scaling up via the funnel, scaling out via worktrees and tmux, and the tooling that holds it together." />
+    <meta name="author" content="Niels Degrande">
+    <meta name="keywords" content="AI, artificial intelligence, software engineering, technology, coding agents, Claude Code, Codex, developer productivity, parallel agents, tmux, neovim">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://niels.degran.de/blog/my-dev-flow.html">
+    <meta property="og:title" content="My dev flow - Niels Degrande's Blog">
+    <meta property="og:description" content="Snapshot of my coding-agent flow: scaling up via the funnel, scaling out via worktrees and tmux, and the tooling that holds it together.">
+    <meta property="og:image" content="https://niels.degran.de/assets/niels.jpg">
+    <meta property="article:published_time" content="2026-05-08">
+    <meta property="article:author" content="Niels Degrande">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://niels.degran.de/blog/my-dev-flow.html">
+    <meta property="twitter:title" content="My dev flow - Niels Degrande's Blog">
+    <meta property="twitter:description" content="Snapshot of my coding-agent flow: scaling up via the funnel, scaling out via worktrees and tmux, and the tooling that holds it together.">
+    <meta property="twitter:image" content="https://niels.degran.de/assets/niels.jpg">
+
+    <!-- Additional SEO tags -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://niels.degran.de/blog/my-dev-flow.html">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "48a7ad56a51a4ef5ad845059521443a9"}'></script>
+</head>
+  <body>
+    <div class="box">
+      <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <div class="breadcrumbs">
+        <a href="../index.html" class="link-green">Home</a> /
+        <a href="../blog/index.html" class="link-green">Blog</a> /
+        <span class="link-gray">Developing</span>
+      </div>
+      <h1>My dev flow</h1>
+      <div class="blog-date">Published on May 8, 2026</div>
+      <div class="blog-text">
+        <p>
+          A snapshot of my development flow, so I can look back at it in three months and reminisce about the good old times.
+        </p>
+
+        <h2>Goal</h2>
+        <p>
+          Get as much work done as possible.
+          Two axes to scale on: have agents do more valuable work on their own (scale up), and have more agents working in parallel (scale out).
+        </p>
+
+        <h2>Scale up</h2>
+        <p>
+          Scale up is about giving a single agent enough context and autonomy to run for a long time and do the right thing on its own.
+        </p>
+        <p>
+          I do not do much <a href="https://ghuntley.com/ralph/" class="link-green" target="_blank" rel="noopener noreferrer">ralphing</a> (a bash loop that re-runs the same prompt until the agent eventually gets it right) or inter-agent debating (have Claude and Codex hash a question out iteratively until they converge) anymore.
+          Both still have their place, but the funnel below has become my default.
+        </p>
+        <p>
+          Stage one is discovery.
+          I lean on skills here — recipes for turning production data (logs, traces, events, and so on) into design decisions before any code changes.
+          Code search is part of the same step; before I plan anything, I want to know what is actually there.
+          Most of this looks like asking the agent a lot of questions.
+        </p>
+        <p>
+          Stage two is planning.
+          I have the agent draft a plan in Claude Code's plan mode; when it finishes, Claude Code writes the plan to a markdown file and prints the path.
+          I open the file in nvim and leave inline annotations next to the parts I want changed.
+          The agent re-reads the file with my comments and updates the plan; the cycle repeats until I am happy.
+        </p>
+        <p>
+          Stage three is execution.
+          The agent implements the plan, opens the PR as a draft, and polls CI itself.
+          Skills handle evals and local-environment testing — the agent runs them, reads the output, and iterates without me babysitting.
+        </p>
+        <p>
+          Stage four is review.
+          A single <code>/pr-review</code> skill kicks off two flavors of Claude review, and a Codex review, in parallel.
+          On the remote side, Cursor's Bugbot adds another independent pass.
+          Only after all of those are happy (and CI is green) does the PR move from draft to ready for human eyes.
+        </p>
+        <p>
+          Across all four stages, a well-tended <code>AGENTS.md</code> carries the project-specific knowledge that lets the agent skip ramp-up.
+          I lean on subagents heavily, especially for investigations that would otherwise blow up the main context window.
+        </p>
+
+        <h2>Scale out</h2>
+        <p>
+          Scale out is about running the above on as many features or issues in parallel as I can keep in my head.
+          Today that's around six tmux windows, one per parallel task, with multiple panes per window — averaging one and a half agents per task on top of supporting panes.
+          Day-to-day, the game is whack-a-mole: keep each agent fed with its next input so none of them sit idle.
+          Underneath that, there's a slower game of raising the brain-fry ceiling — practice and tooling both lift it.
+        </p>
+        <p>
+          First precondition: removing visual noise.
+          The only two apps I keep open are the browser and the terminal.
+          Slack, email, and calendars live in the browser; manual code inspection, note-taking in <a href="https://neovim.io/" class="link-green" target="_blank" rel="noopener noreferrer">nvim</a>, and the agents themselves all live in the terminal.
+          Anything outside those two apps would be one more thing my biological RAM has to keep alive.
+        </p>
+        <p>
+          Inside the terminal, the base unit is a <a href="https://git-scm.com/docs/git-worktree" class="link-green" target="_blank" rel="noopener noreferrer">git worktree</a> per feature, hosted in its own <a href="https://github.com/tmux/tmux" class="link-green" target="_blank" rel="noopener noreferrer">tmux</a> window.
+          Inside that window, several panes do the work: the agents (Claude Code and Codex side by side), the dev server (on its own port so parallel worktrees don't collide), and one or more <code>logpane</code>s for evals, reviewers, or other long-running things.
+          On the browser side, I rename the corresponding tab in <a href="https://zen-browser.app/" class="link-green" target="_blank" rel="noopener noreferrer">Zen</a> to match, so I can keep track of which worktree I am poking at.
+          A separate tmux window stays open for reviewing other people's PRs, so I can drop into it without losing my place.
+        </p>
+        <p>
+          The glue is bash functions in my <a href="https://github.com/NielsDegrande/dotfiles/blob/master/mackup/.functions" class="link-green" target="_blank" rel="noopener noreferrer">dotfiles</a>.
+          <code>wtnew</code> creates a worktree at <code>../wt-&lt;name&gt;</code> with a fresh branch from <code>origin/main</code>, configures the environment, and renames the tmux window.
+          <code>wtrm</code> tears one down.
+          <code>gcob</code> creates a fresh branch off <code>origin/main</code> with <code>--no-track</code>.
+          <code>logpane</code> runs a command, redirects its output to a logfile that a small tmux split tails live, and rings the terminal bell when the command finishes.
+          That bell is also how Claude Code talks back: a small script on the <code>Stop</code> and <code>Notification</code> hooks fires a macOS notification with a one-line summary (the last user prompt, truncated) and rings the same bell.
+          tmux picks it up and turns the window's entry in the status line red, so I can tell at a glance which agent needs me back without having to look pane by pane.
+          Stitched together, this reproduces a better <a href="https://www.conductor.build/" class="link-green" target="_blank" rel="noopener noreferrer">Conductor</a> for me — tailored to my specifics and endlessly customizable.
+        </p>
+        <p>
+          Not every window needs my attention all the time, and two patterns handle the rest.
+          The parking lot is a tmux session called <code>parking</code>; when I am temporarily paused on a window — most often awaiting PR feedback — I move it there from the default session, where it sits out of sight until I need it back.
+          Shortcuts handle the move in both directions.
+          For waits that aren't running under <code>logpane</code>, I have <code>unread N</code>: it sleeps <code>N</code> seconds in a pane, then rings the bell.
+          When I am waiting on something slow, I run <code>unread 1800</code> and forget about it; the bell pulls me back when the wait is up.
+        </p>
+
+        <h2>Meta</h2>
+        <p>
+          A few habits matter more than any specific tool.
+        </p>
+        <p>
+          The first is keeping <code>.agents/</code> under continuous update.
+          Skills, agents, recipes, and project conventions get added the moment I find a pattern worth re-using, so the next agent run starts smarter, more contextually aware, and more independent than the last.
+          This is what compounds on scale up.
+        </p>
+        <p>
+          The second is keeping dotfiles under continuous update.
+          Whenever I find myself doing the same thing twice in the shell or in tmux, that is a signal to lift it into the dotfile repo so the next worktree is set up faster.
+          This is what compounds on scale out.
+        </p>
+
+        <h2>Remote</h2>
+        <p>
+          <a href="https://tailscale.com/" class="link-green" target="_blank" rel="noopener noreferrer">Tailscale</a> handles the connectivity part.
+          I SSH back into my laptop from anywhere and attach to the running tmux session, which gives me the full agent fleet as if I never left.
+          In practice I rarely do this; the setup is mostly there for the day I need it.
+        </p>
+        <p>
+          Beyond Tailscale, there is now Claude's remote control.
+          It drives a single Claude session rather than the whole tmux setup the way that's possible with Tailscale, so it is less capable for managing a fleet — but the UX is nicer, especially on mobile.
+        </p>
+      </div>
+    </div>
+    <script src="../theme.js"></script>
+  </body>
+</html>
