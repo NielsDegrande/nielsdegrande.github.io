@@ -121,10 +121,15 @@ a {
   align-items: center;
   background: var(--background-color);
   border: none;
+  color: var(--text-color);
   cursor: pointer;
   display: flex;
   z-index: 1000;
   position: absolute;
   right: -0.45rem;
   top: 26px;
+}
+
+.theme-toggle:hover {
+  color: var(--accent-color);
 }
